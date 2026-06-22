@@ -340,17 +340,27 @@
             widgetCard.style.setProperty('--theme-color', themeColor);
             cardPreviewContainer.style.borderColor = `${themeColor}40`;
 
-            // Рассчитываем изменения тренда цены.
+            // Рассчитываем дневную дельту цены.
             // Приоритет: явный priceChange из data.json. Если его нет или он 0 —
-            // вычисляем дельту из history (самая старая точка → последняя).
+            // считаем из history: последняя точка минус предпоследняя (это и есть изменение за день).
+            // Если в истории только одна точка — фоллбэк на месячную дельту (последняя минус первая).
             let change = (typeof card.priceChange === 'number' && card.priceChange !== 0)
                 ? card.priceChange
                 : 0;
             if (change === 0 && Array.isArray(card.history) && card.history.length >= 2) {
-                const first = Number(card.history[0].price);
                 const last = Number(card.history[card.history.length - 1].price);
-                if (!isNaN(first) && !isNaN(last)) {
-                    change = Number((last - first).toFixed(2));
+                if (card.history.length >= 2) {
+                    const prev = Number(card.history[card.history.length - 2].price);
+                    if (!isNaN(last) && !isNaN(prev)) {
+                        change = Number((last - prev).toFixed(2));
+                    }
+                }
+                // Фоллбэк: если дневная дельта нулевая и точка всего одна — месячная
+                if (change === 0 && card.history.length >= 2) {
+                    const first = Number(card.history[0].price);
+                    if (!isNaN(first) && !isNaN(last)) {
+                        change = Number((last - first).toFixed(2));
+                    }
                 }
             }
             if (change > 0) {
@@ -371,12 +381,12 @@
             document.getElementById('sparkline-title').innerText = 'Тренд (30д)';
             buildSparkline(card.history, themeColor, gradientStart);
 
-            // 3. Через 2 секунды перетекаем на детальный часовой график
+            // 3. Через 5 секунд перетекаем на детальный часовой график
             chartTimeout = setTimeout(() => {
                 const hourly = generateHourlyHistory(card.history, card.currentPrice);
                 document.getElementById('sparkline-title').innerText = 'Тренд (1ч)';
                 buildSparkline(hourly, themeColor, gradientStart);
-            }, 2000);
+            }, 5000);
         }
 
         // Построение легкого бесшовного мини-графика (без осей, легенд и сеток)
