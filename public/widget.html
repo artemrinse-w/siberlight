@@ -13,9 +13,11 @@
             background-color: transparent !important;
             overflow: hidden;
         }
-        /* Кастомные плавные переходы для контента (анимация переключения) */
+        /* Кастомные плавные переходы для контента.
+           Применяется ТОЛЬКО к внутренним блокам (ник, цена, бейдж), НЕ к самому контейнеру виджета —
+           чтобы при смене карточки фон не уходил в прозрачность и не было «белого экрана» на стриме. */
         .widget-transition {
-            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: opacity 0.25s ease-out;
         }
         /* Ник-карточки: текст в цвет редкости + цветное drop-shadow свечение.
            Реализация через filter (а не background-clip:text), чтобы текст не
@@ -52,13 +54,15 @@
       Растягивается на весь body, адаптируясь под любой размер источника в OBS.
       --theme-color задаёт палитру редкости и применяется к нику/рамке/свечению.
     -->
-    <div id="widget-card" style="--theme-color: #06b6d4;" class="widget-transition opacity-0 translate-y-4 w-full h-full min-h-[60px] bg-slate-950/90 border border-cyan-500/40 rounded-2xl p-3 sm:p-4 flex flex-row items-stretch gap-3 sm:gap-4 shadow-[0_0_25px_rgba(6,182,212,0.15)] backdrop-blur-md overflow-hidden">
+    <!-- Контейнер виджета: НЕ имеет класса widget-transition, чтобы фон НЕ моргал при смене карточки.
+         opacity-0 убран — виджет появляется сразу, без fade-in всего блока. -->
+    <div id="widget-card" style="--theme-color: #06b6d4;" class="w-full h-full min-h-[60px] bg-slate-950/90 border border-cyan-500/40 rounded-2xl p-3 sm:p-4 flex flex-row items-stretch gap-3 sm:gap-4 shadow-[0_0_25px_rgba(6,182,212,0.15)] backdrop-blur-md overflow-hidden">
         
         <!-- ЛЕВАЯ ЧАСТЬ: превью + ник + статус наличия. Занимает всё свободное место слева. -->
         <div class="flex items-center gap-3 sm:gap-4 h-full flex-1 min-w-0">
             <!-- Превью карточки: квадрат, но ограничен max-h/max-w, чтобы не раздуваться на низких источниках -->
-            <div id="card-preview-container" class="flex-shrink-0 self-center h-full max-h-[100px] aspect-square bg-slate-900 border border-slate-800/80 rounded-xl p-1 flex items-center justify-center overflow-hidden widget-transition">
-                <img id="card-preview" src="" alt="" class="max-h-full max-w-full object-contain widget-transition opacity-0">
+            <div id="card-preview-container" class="flex-shrink-0 self-center h-full max-h-[100px] aspect-square bg-slate-900 border border-slate-800/80 rounded-xl p-1 flex items-center justify-center overflow-hidden">
+                <img id="card-preview" src="" alt="" class="max-h-full max-w-full object-contain">
             </div>
             
             <!-- Информация: текст с защитой от переполнения, центрирован по вертикали -->
@@ -222,120 +226,157 @@
                 }
             }
 
-            if (cardsData.length > 0 && widgetCard.classList.contains('opacity-0')) {
-                // Самый первый рендер после загрузки данных
-                renderCard(0);
+            if (cardsData.length > 0) {
+                // Самый первый рендер после загрузки данных.
+                // Если виджет ещё ни разу не показывал карточку — вызываем напрямую,
+                // иначе — через renderCard (который сам знает, что это не первый показ).
+                if (!widgetCard.dataset.rendered) {
+                    widgetCard.dataset.rendered = '1';
+                    applyCard(0);
+                } else {
+                    renderCard(0);
+                }
             }
         }
 
-        // Рендеринг конкретной карточки и построение мини-графика
+        // Прямое применение карточки без анимации — для самого первого показа.
+        function applyCard(index) {
+            updateCardData(index);
+        }
+
+        // Рендеринг конкретной карточки и построение мини-графика.
+        // Контейнер виджета НЕ моргает — фон остаётся видимым всё время.
+        // Лёгкий fade только на внутренних текстовых блоках (ник/цена/тренд).
         function renderCard(index) {
             if (!cardsData || cardsData.length === 0) return;
             const card = cardsData[index];
 
-            // 1. Плавно скрываем старую информацию (уезжает вниз и затухает)
-            widgetCard.classList.add('opacity-0', 'translate-y-4');
-            cardPreview.classList.add('opacity-0');
+            // 1. Короткий fade только текстового блока (250 мс) — фон виджета НЕ трогаем.
+            fadeOut([cardName, cardPrice, cardTrend, cardBadge, cardAvailable]);
 
             setTimeout(() => {
-                // 2. Обновляем текстовые данные пока блок невидим
-                cardName.innerText = card.name;
-                cardPrice.innerText = `${card.currentPrice.toFixed(2)} ₽`;
-                
-                // Количество в продаже на маркете
-                const listings = card.sellListings !== undefined ? card.sellListings : null;
-                if (listings !== null && listings > 0) {
-                    cardAvailable.innerText = `В продаже: ${listings} шт.`;
-                } else {
-                    cardAvailable.innerText = `В продаже: нет лотов`;
+                updateCardData(index);
+                // 2. Плавный fade-in обновлённого контента.
+                fadeIn([cardName, cardPrice, cardTrend, cardBadge, cardAvailable]);
+            }, 250);
+        }
+
+        // Помощник: плавно гасит набор элементов
+        function fadeOut(elements) {
+            elements.forEach(el => {
+                if (!el) return;
+                el.style.opacity = '0';
+            });
+        }
+        // Помощник: плавно проявляет набор элементов
+        function fadeIn(elements) {
+            // requestAnimationFrame гарантирует, что браузер сначала зафиксирует opacity:0,
+            // и только потом начнёт transition к 1 — иначе анимации не будет.
+            requestAnimationFrame(() => {
+                elements.forEach(el => {
+                    if (!el) return;
+                    el.style.opacity = '1';
+                });
+            });
+        }
+
+        // Непосредственное обновление данных карточки (без анимации).
+        // Вызывается напрямую при первом показе и после fade-out при последующих сменах.
+        function updateCardData(index) {
+            const card = cardsData[index];
+
+            // 1. Обновляем текстовые данные
+            cardName.innerText = card.name;
+            cardPrice.innerText = `${card.currentPrice.toFixed(2)} ₽`;
+
+            // Количество в продаже на маркете
+            const listings = card.sellListings !== undefined ? card.sellListings : null;
+            if (listings !== null && listings > 0) {
+                cardAvailable.innerText = `В продаже: ${listings} шт.`;
+            } else {
+                cardAvailable.innerText = `В продаже: нет лотов`;
+            }
+
+            // Обновляем превью на основе icon_url стикера с CDN Steam.
+            // Картинка стоит на месте — просто меняется src, без opacity-анимации.
+            if (card.icon_url) {
+                cardPreview.src = `https://community.steamstatic.com/economy/image/${card.icon_url}/128fx128f`;
+                cardPreview.alt = card.name;
+            } else {
+                cardPreview.src = '';
+                cardPreview.alt = '';
+            }
+
+            // Определяем тип редкости стикера и настраиваем тему оформления
+            let themeColor = '#94a3b8'; // Normal (серебристый)
+            let gradientStart = 'rgba(148, 163, 184, 0.2)';
+            let badgeStyle = "bg-slate-900 text-slate-300 border-slate-700/80";
+            let cardType = "Normal";
+
+            if (card.name.includes('(Glitter)')) {
+                themeColor = '#06b6d4';
+                gradientStart = 'rgba(6, 182, 212, 0.25)';
+                badgeStyle = "bg-cyan-950/70 text-cyan-300 border-cyan-800/80";
+                cardType = "Glitter";
+            } else if (card.name.includes('(Holo)')) {
+                themeColor = '#a855f7';
+                gradientStart = 'rgba(168, 85, 247, 0.25)';
+                badgeStyle = "bg-purple-950/70 text-purple-300 border-purple-800/80";
+                cardType = "Holo";
+            } else if (card.name.includes('(Gold)')) {
+                themeColor = '#fbbf24';
+                gradientStart = 'rgba(251, 191, 36, 0.25)';
+                badgeStyle = "bg-amber-950/70 text-amber-300 border-amber-800/80";
+                cardType = "Gold";
+            }
+
+            // Обновляем плашку редкости
+            cardBadge.innerText = cardType;
+            cardBadge.className = "text-[9px] font-black tracking-widest uppercase px-2 py-0.5 rounded border flex-shrink-0 widget-transition " + badgeStyle;
+
+            // Настраиваем свечение рамки карточки под цвет её редкости
+            widgetCard.style.borderColor = `${themeColor}60`;
+            widgetCard.style.boxShadow = `0 0 25px ${themeColor}20`;
+            widgetCard.style.setProperty('--theme-color', themeColor);
+            cardPreviewContainer.style.borderColor = `${themeColor}40`;
+
+            // Рассчитываем изменения тренда цены.
+            // Приоритет: явный priceChange из data.json. Если его нет или он 0 —
+            // вычисляем дельту из history (самая старая точка → последняя).
+            let change = (typeof card.priceChange === 'number' && card.priceChange !== 0)
+                ? card.priceChange
+                : 0;
+            if (change === 0 && Array.isArray(card.history) && card.history.length >= 2) {
+                const first = Number(card.history[0].price);
+                const last = Number(card.history[card.history.length - 1].price);
+                if (!isNaN(first) && !isNaN(last)) {
+                    change = Number((last - first).toFixed(2));
                 }
-                
-                // Обновляем превью на основе icon_url стикера с CDN Steam
-                if (card.icon_url) {
-                    cardPreview.src = `https://community.steamstatic.com/economy/image/${card.icon_url}/128fx128f`;
-                    cardPreview.alt = `Превью для ${card.name}`;
-                } else {
-                    cardPreview.src = '';
-                    cardPreview.alt = 'Нет превью';
-                }
+            }
+            if (change > 0) {
+                cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-emerald-400 whitespace-nowrap";
+                cardTrend.innerHTML = `▲ +${change.toFixed(2)} ₽`;
+            } else if (change < 0) {
+                cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-rose-400 whitespace-nowrap";
+                cardTrend.innerHTML = `▼ ${Math.abs(change).toFixed(2)} ₽`;
+            } else {
+                cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-slate-400 whitespace-nowrap";
+                cardTrend.innerHTML = `• Без изменений`;
+            }
 
-                // Определяем тип редкости стикера и настраиваем тему оформления
-                let themeColor = '#94a3b8'; // Normal (серебристый)
-                let gradientStart = 'rgba(148, 163, 184, 0.2)';
-                let badgeStyle = "bg-slate-900 text-slate-300 border-slate-700/80";
-                let cardType = "Normal";
+            // 2. Строим или обновляем мини-график (sparkline)
+            clearTimeout(chartTimeout);
 
-                if (card.name.includes('(Glitter)')) {
-                    themeColor = '#06b6d4'; // Glitter (бирюзовый)
-                    gradientStart = 'rgba(6, 182, 212, 0.25)';
-                    badgeStyle = "bg-cyan-950/70 text-cyan-300 border-cyan-800/80";
-                    cardType = "Glitter";
-                } else if (card.name.includes('(Holo)')) {
-                    themeColor = '#a855f7'; // Holo (фиолетовый)
-                    gradientStart = 'rgba(168, 85, 247, 0.25)';
-                    badgeStyle = "bg-purple-950/70 text-purple-300 border-purple-800/80";
-                    cardType = "Holo";
-                } else if (card.name.includes('(Gold)')) {
-                    themeColor = '#fbbf24'; // Gold (золотой)
-                    gradientStart = 'rgba(251, 191, 36, 0.25)';
-                    badgeStyle = "bg-amber-950/70 text-amber-300 border-amber-800/80";
-                    cardType = "Gold";
-                }
+            // Сразу показываем 30-дневный тренд
+            document.getElementById('sparkline-title').innerText = 'Тренд (30д)';
+            buildSparkline(card.history, themeColor, gradientStart);
 
-                // Обновляем плашку редкости
-                cardBadge.innerText = cardType;
-                cardBadge.className = "text-[9px] font-black tracking-widest uppercase px-2 py-0.5 rounded border flex-shrink-0 widget-transition " + badgeStyle;
-
-                // Настраиваем свечение рамки карточки под цвет её редкости
-                widgetCard.style.borderColor = `${themeColor}60`; // Рамка
-                widgetCard.style.boxShadow = `0 0 25px ${themeColor}20`; // Свечение
-                // CSS-переменная для темы — влияет на градиент/свечение ника и подчёркивание
-                widgetCard.style.setProperty('--theme-color', themeColor);
-                cardPreviewContainer.style.borderColor = `${themeColor}40`;
-
-                // Рассчитываем изменения тренда цены (зеленый / красный / нейтральный).
-                // Приоритет: явный priceChange из data.json. Если его нет или он 0 —
-                // вычисляем дельту из history (самая старая точка → последняя).
-                let change = (typeof card.priceChange === 'number' && card.priceChange !== 0)
-                    ? card.priceChange
-                    : 0;
-                if (change === 0 && Array.isArray(card.history) && card.history.length >= 2) {
-                    const first = Number(card.history[0].price);
-                    const last = Number(card.history[card.history.length - 1].price);
-                    if (!isNaN(first) && !isNaN(last)) {
-                        change = Number((last - first).toFixed(2));
-                    }
-                }
-                if (change > 0) {
-                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-emerald-400";
-                    cardTrend.innerHTML = `▲ +${change.toFixed(2)} ₽`;
-                } else if (change < 0) {
-                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-rose-400";
-                    cardTrend.innerHTML = `▼ ${Math.abs(change).toFixed(2)} ₽`;
-                } else {
-                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-slate-400";
-                    cardTrend.innerHTML = `• Без изменений`;
-                }
-
-                // 3. Строим или обновляем мини-график (sparkline)
-                // Сначала очищаем старый таймер смены графиков
-                clearTimeout(chartTimeout);
-
-                // Сразу показываем 30-дневный тренд (общая картина)
-                document.getElementById('sparkline-title').innerText = 'Тренд (30д)';
-                buildSparkline(card.history, themeColor, gradientStart);
-
-                // 4. Плавно проявляем обновленный виджет обратно
-                widgetCard.classList.remove('opacity-0', 'translate-y-4');
-                cardPreview.classList.remove('opacity-0');
-
-                // 5. Через 2 секунды перетекаем на детальный часовой график (последний час, шаг 5 мин)
-                chartTimeout = setTimeout(() => {
-                    const hourly = generateHourlyHistory(card.history, card.currentPrice);
-                    document.getElementById('sparkline-title').innerText = 'Тренд (1ч)';
-                    buildSparkline(hourly, themeColor, gradientStart);
-                }, 2000);
-            }, 600); //   transition
+            // 3. Через 2 секунды перетекаем на детальный часовой график
+            chartTimeout = setTimeout(() => {
+                const hourly = generateHourlyHistory(card.history, card.currentPrice);
+                document.getElementById('sparkline-title').innerText = 'Тренд (1ч)';
+                buildSparkline(hourly, themeColor, gradientStart);
+            }, 2000);
         }
 
         // Построение легкого бесшовного мини-графика (без осей, легенд и сеток)
