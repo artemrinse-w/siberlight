@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T17:20:13.926Z",
+  "lastUpdated": "2026-06-22T20:18:19.754Z",
   "cards": [
     {
       "id": "card_1",
@@ -31,14 +31,14 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 1,
-      "sellListings": 261
+      "sellListings": 262
     },
     {
       "id": "card_2",
       "name": "SabeRLighT- (Glitter) 2022",
       "market_hash_name": "Glitter SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 2.2,
-      "priceChange": 0.01,
+      "priceChange": 0,
       "history": [
         {
           "date": "2026-06-18",
@@ -142,7 +142,7 @@
       "priceChange": 0,
       "currentPrice": 2.19,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 342,
+      "sellListings": 343,
       "soldLast24h": 0
     },
     {
@@ -158,7 +158,7 @@
       "priceChange": 0,
       "currentPrice": 2.19,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 67,
+      "sellListings": 66,
       "soldLast24h": 2
     },
     {
@@ -175,7 +175,7 @@
       "currentPrice": 5.09,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 21,
-      "soldLast24h": 0
+      "soldLast24h": 1
     },
     {
       "id": "card_8",
@@ -203,7 +203,7 @@
       ],
       "name": "SabeRLighT- (Normal) 2025",
       "market_hash_name": "Saberlight Player Sticker - TI 2025",
-      "priceChange": -0.02,
+      "priceChange": 0,
       "currentPrice": 2.2,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 27,
