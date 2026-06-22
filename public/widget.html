@@ -17,58 +17,82 @@
         .widget-transition {
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
+        /* Ник-карточки: вертикальный градиент (белый → цвет темы редкости) + мягкое свечение.
+           Тема задаётся через CSS-переменную --theme-color на #widget-card. */
+        .nickname {
+            background: linear-gradient(180deg, #ffffff 0%, var(--theme-color, #06b6d4) 110%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+            /* drop-shadow корректно работает с прозрачным текстом и подсвечивает контур */
+            filter: drop-shadow(0 0 6px color-mix(in srgb, var(--theme-color, #06b6d4) 55%, transparent))
+                    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6));
+            letter-spacing: 0.04em;
+        }
+        /* Тонкая полоска-подчёркивание под ником — для премиального вида */
+        .nickname-underline {
+            height: 2px;
+            border-radius: 2px;
+            background: linear-gradient(90deg,
+                transparent 0%,
+                var(--theme-color, #06b6d4) 30%,
+                var(--theme-color, #06b6d4) 70%,
+                transparent 100%);
+            opacity: 0.85;
+            box-shadow: 0 0 6px color-mix(in srgb, var(--theme-color, #06b6d4) 50%, transparent);
+        }
     </style>
 </head>
 <body class="p-1 m-0 h-screen w-screen overflow-hidden">
 
     <!-- 
-      Основной контейнер виджета. 
-      Спроектирован как резиновый (stretches to fill body), адаптирующийся под любые размеры источника в OBS.
-      Обладает эффектом размытия заднего фона (backdrop-blur), неоновой рамкой и динамической тенью.
+      Основной контейнер виджета.
+      Всегда горизонтальный (flex-row), вертикально резиновый (h-full + h-full у детей).
+      Растягивается на весь body, адаптируясь под любой размер источника в OBS.
+      --theme-color задаёт палитру редкости и применяется к нику/рамке/свечению.
     -->
-    <div id="widget-card" class="widget-transition opacity-0 translate-y-4 w-full h-full bg-slate-950/90 border border-cyan-500/40 rounded-2xl p-4 flex flex-col sm:flex-row justify-between items-center sm:items-stretch gap-4 sm:gap-0 shadow-[0_0_25px_rgba(6,182,212,0.15)] backdrop-blur-md overflow-hidden">
+    <div id="widget-card" style="--theme-color: #06b6d4;" class="widget-transition opacity-0 translate-y-4 w-full h-full min-h-[60px] bg-slate-950/90 border border-cyan-500/40 rounded-2xl p-3 sm:p-4 flex flex-row justify-between items-stretch gap-3 sm:gap-4 shadow-[0_0_25px_rgba(6,182,212,0.15)] backdrop-blur-md overflow-hidden">
         
-        <!-- ЛЕВАЯ ЧАСТЬ: Название карточки, статус наличия и превью -->
-        <div class="flex items-center gap-4 h-[70px] w-full sm:w-auto sm:flex-[1.2] min-w-0">
-            <!-- Превью карточки -->
-            <div id="card-preview-container" class="flex-shrink-0 w-[70px] h-[70px] bg-slate-900 border border-slate-800/80 rounded-xl p-1 flex items-center justify-center overflow-hidden widget-transition">
+        <!-- ЛЕВАЯ ЧАСТЬ: превью + ник + статус наличия. Высота тянется за родителем. -->
+        <div class="flex items-center gap-3 sm:gap-4 h-full w-auto flex-[1.2] min-w-0">
+            <!-- Превью карточки: квадрат, привязанный к высоте виджета (aspect-square) -->
+            <div id="card-preview-container" class="flex-shrink-0 self-center h-full aspect-square bg-slate-900 border border-slate-800/80 rounded-xl p-1 flex items-center justify-center overflow-hidden widget-transition">
                 <img id="card-preview" src="" alt="Превью" class="max-h-full max-w-full object-contain widget-transition opacity-0">
             </div>
             
-            <!-- Информация: text с защитой от переполнения (min-w-0 flex-1) -->
-            <div class="flex flex-col justify-between h-full min-w-0 flex-1">
-                <div class="flex items-center gap-2">
+            <!-- Информация: текст с защитой от переполнения, центрирован по вертикали -->
+            <div class="flex flex-col justify-center h-full min-w-0 flex-1 gap-1.5">
+                <div class="flex items-center gap-2 min-w-0">
                     <span id="card-badge" class="text-[9px] font-black tracking-widest uppercase bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded border border-cyan-800 flex-shrink-0 widget-transition">
                         NORMAL
                     </span>
                     <span id="card-available" class="text-xs text-slate-400 font-medium truncate">
-                        Продажи (24ч): --
+                        В продаже: --
                     </span>
                 </div>
-                <!-- Название карточки с ограничением по длине -->
-                <h2 id="card-name" class="text-base font-black text-white tracking-wide uppercase truncate mb-0.5">
+                <!-- Ник: крупный, с градиентом в цвет редкости и тонким подчёркиванием -->
+                <h2 id="card-name" class="nickname text-base sm:text-lg font-black tracking-wide uppercase truncate leading-tight">
                     Загрузка...
                 </h2>
+                <!-- Декоративная полоска-подчёркивание под ником -->
+                <div class="nickname-underline w-3/4 max-w-[220px]"></div>
             </div>
         </div>
 
-        <!-- СРЕДНЯЯ ЧАСТЬ: Текущая цена и индикатор тренда -->
-        <div class="flex sm:flex-col justify-between items-center sm:items-start h-auto sm:h-[70px] w-full sm:w-[150px] sm:flex-shrink-0 border-t sm:border-t-0 sm:border-l border-slate-800/80 pt-3 sm:pt-0 sm:pl-6">
-            <div class="flex flex-col sm:block">
-                <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none block sm:inline">Текущая цена</span>
-                <span id="card-price" class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none mt-1 sm:mt-0 block">0 ₽</span>
-            </div>
-            
-            <!-- Компактный индикатор тренда цены -->
-            <div id="card-trend" class="flex items-center gap-1 text-[11px] font-bold text-slate-400 leading-none">
+        <!-- СРЕДНЯЯ ЧАСТЬ: цена и тренд, вертикально по центру, фиксированная ширина -->
+        <div class="flex flex-col justify-center items-start h-full w-auto sm:w-[150px] flex-shrink-0 border-l border-slate-800/80 pl-3 sm:pl-6 gap-1">
+            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Текущая цена</span>
+            <span id="card-price" class="text-xl sm:text-2xl font-black text-white tracking-tight leading-none">0 ₽</span>
+            <div id="card-trend" class="flex items-center gap-1 text-[11px] font-bold text-slate-400 leading-none mt-0.5">
                 <span>--</span>
             </div>
         </div>
 
-        <!-- ПРАВАЯ ЧАСТЬ: Мини-график (Sparkline) тренда цены -->
-        <div class="flex flex-col justify-between h-[70px] w-full sm:w-auto sm:flex-1 min-w-[120px] sm:min-w-[150px] border-t sm:border-t-0 sm:border-l border-slate-800/80 pt-3 sm:pt-0 sm:pl-6 relative">
-            <span id="sparkline-title" class="text-[9px] text-slate-500 uppercase font-bold tracking-wider absolute -top-1.5 right-0">Тренд (30д)</span>
-            <div class="w-full h-[55px] mt-2">
+        <!-- ПРАВАЯ ЧАСТЬ: sparkline, занимает всё оставшееся по горизонтали и всю высоту -->
+        <div class="flex flex-col justify-center h-full flex-1 min-w-[120px] sm:min-w-[150px] border-l border-slate-800/80 pl-3 sm:pl-6 relative min-h-0">
+            <span id="sparkline-title" class="text-[9px] text-slate-500 uppercase font-bold tracking-wider absolute top-1 right-1">Тренд (30д)</span>
+            <div class="w-full h-full min-h-0">
                 <canvas id="sparklineChart"></canvas>
             </div>
         </div>
@@ -161,16 +185,17 @@
             const stickerIcon2025 = 'i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw';
 
             return [
-                { id: "card_1", name: "SabeRLighT- (Normal) 2022", currentPrice: 2.19, available: 260, priceChange: 0.15, icon_url: stickerIcon2022, history: generateMockHistory(2.04, 2.19) },
-                { id: "card_2", name: "SabeRLighT- (Glitter) 2022", currentPrice: 2.19, available: 47, priceChange: -0.10, icon_url: stickerIcon2022, history: generateMockHistory(2.29, 2.19) },
-                { id: "card_3", name: "SabeRLighT- (Holo) 2022", currentPrice: 4.32, available: 40, priceChange: 0.85, icon_url: stickerIcon2022, history: generateMockHistory(3.47, 4.32) },
-                { id: "card_4", name: "SabeRLighT- (Gold) 2022", currentPrice: 84.06, available: 8, priceChange: 5.40, icon_url: stickerIcon2022, history: generateMockHistory(78.66, 84.06) },
-                { id: "card_5", name: "SabeRLighT- (Normal) 2023", currentPrice: 3.25, available: 341, priceChange: 0.05, icon_url: stickerIcon2023, history: generateMockHistory(3.20, 3.25) },
-                { id: "card_6", name: "SabeRLighT- (Holo) 2023", currentPrice: 7.50, available: 21, priceChange: -0.40, icon_url: stickerIcon2023, history: generateMockHistory(7.90, 7.50) },
-                { id: "card_7", name: "SabeRLighT- (Gold) 2023", currentPrice: 134.12, available: 7, priceChange: 12.30, icon_url: stickerIcon2023, history: generateMockHistory(121.82, 134.12) },
-                { id: "card_8", name: "SabeRLighT- (Normal) 2025", currentPrice: 4.50, available: 26, priceChange: 0.20, icon_url: stickerIcon2025, history: generateMockHistory(4.30, 4.50) },
-                { id: "card_9", name: "SabeRLighT- (Holo) 2025", currentPrice: 135.00, available: 4, priceChange: 15.00, icon_url: stickerIcon2025, history: generateMockHistory(120.00, 135.00) },
-                { id: "card_10", name: "SabeRLighT- (Gold) 2025", currentPrice: 371.00, available: 4, priceChange: -18.50, icon_url: stickerIcon2025, history: generateMockHistory(389.50, 371.00) }
+                { id: "card_1", name: "SabeRLighT- (Normal) 2022", currentPrice: 2.19, sellListings: 260, soldLast24h: 1, priceChange: 0.15, icon_url: stickerIcon2022, history: generateMockHistory(2.04, 2.19) },
+                { id: "card_2", name: "SabeRLighT- (Glitter) 2022", currentPrice: 2.19, sellListings: 47, soldLast24h: 3, priceChange: -0.10, icon_url: stickerIcon2022, history: generateMockHistory(2.29, 2.19) },
+                { id: "card_3", name: "SabeRLighT- (Holo) 2022", currentPrice: 4.32, sellListings: 40, soldLast24h: 2, priceChange: 0.85, icon_url: stickerIcon2022, history: generateMockHistory(3.47, 4.32) },
+                { id: "card_4", name: "SabeRLighT- (Gold) 2022", currentPrice: 84.06, sellListings: 8, soldLast24h: 0, priceChange: 5.40, icon_url: stickerIcon2022, history: generateMockHistory(78.66, 84.06) },
+                { id: "card_5", name: "SabeRLighT- (Normal) 2023", currentPrice: 3.25, sellListings: 342, soldLast24h: 5, priceChange: 0.05, icon_url: stickerIcon2023, history: generateMockHistory(3.20, 3.25) },
+                { id: "card_6", name: "SabeRLighT- (Glitter) 2023", currentPrice: 2.50, sellListings: 67, soldLast24h: 2, priceChange: 0.10, icon_url: stickerIcon2023, history: generateMockHistory(2.40, 2.50) },
+                { id: "card_7", name: "SabeRLighT- (Holo) 2023", currentPrice: 7.50, sellListings: 21, soldLast24h: 1, priceChange: -0.40, icon_url: stickerIcon2023, history: generateMockHistory(7.90, 7.50) },
+                { id: "card_8", name: "SabeRLighT- (Gold) 2023", currentPrice: 134.12, sellListings: 7, soldLast24h: 0, priceChange: 12.30, icon_url: stickerIcon2023, history: generateMockHistory(121.82, 134.12) },
+                { id: "card_9", name: "SabeRLighT- (Normal) 2025", currentPrice: 4.50, sellListings: 26, soldLast24h: 3, priceChange: 0.20, icon_url: stickerIcon2025, history: generateMockHistory(4.30, 4.50) },
+                { id: "card_10", name: "SabeRLighT- (Holo) 2025", currentPrice: 135.00, sellListings: 4, soldLast24h: 0, priceChange: 15.00, icon_url: stickerIcon2025, history: generateMockHistory(120.00, 135.00) },
+                { id: "card_11", name: "SabeRLighT- (Gold) 2025", currentPrice: 371.00, sellListings: 4, soldLast24h: 0, priceChange: -18.50, icon_url: stickerIcon2025, history: generateMockHistory(389.50, 371.00) }
             ];
         }
 
@@ -209,11 +234,12 @@
                 cardName.innerText = card.name;
                 cardPrice.innerText = `${card.currentPrice.toFixed(2)} ₽`;
                 
-                // Продажи/доступность
-                if (card.available) {
-                    cardAvailable.innerText = `Продажи (24ч): ${card.available} шт.`;
+                // Количество в продаже на маркете
+                const listings = card.sellListings !== undefined ? card.sellListings : null;
+                if (listings !== null && listings > 0) {
+                    cardAvailable.innerText = `В продаже: ${listings} шт.`;
                 } else {
-                    cardAvailable.innerText = `Продажи (24ч): Активно`;
+                    cardAvailable.innerText = `В продаже: нет лотов`;
                 }
                 
                 // Обновляем превью на основе icon_url стикера с CDN Steam
@@ -255,6 +281,8 @@
                 // Настраиваем свечение рамки карточки под цвет её редкости
                 widgetCard.style.borderColor = `${themeColor}60`; // Рамка
                 widgetCard.style.boxShadow = `0 0 25px ${themeColor}20`; // Свечение
+                // CSS-переменная для темы — влияет на градиент/свечение ника и подчёркивание
+                widgetCard.style.setProperty('--theme-color', themeColor);
                 cardPreviewContainer.style.borderColor = `${themeColor}40`;
 
                 // Рассчитываем изменения тренда цены (зеленый / красный / нейтральный)

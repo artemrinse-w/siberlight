@@ -292,9 +292,15 @@
                         </div>
                     </div>
 
-                    <div class="mt-2 pt-2 flex justify-between items-center text-[10px] text-slate-500">
-                        <span>Продажи (24ч):</span>
-                        <span class="font-bold text-slate-400">${card.available ? `${card.available} шт` : 'Активно'}</span>
+                    <div class="mt-2 pt-2 flex justify-between items-center text-[10px] text-slate-500 border-t border-slate-800/50">
+                        <div>
+                            <span>В продаже:</span>
+                            <span class="font-bold text-slate-400">${card.sellListings !== undefined ? `${card.sellListings} шт` : '—'}</span>
+                        </div>
+                        <div>
+                            <span>Продано (24ч):</span>
+                            <span class="font-bold text-slate-400">${card.soldLast24h ? `${card.soldLast24h} шт` : '—'}</span>
+                        </div>
                     </div>
                 `;
 

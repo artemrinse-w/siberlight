@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-22T12:48:45.246Z",
+  "lastUpdated": "2026-06-22T13:19:16.186Z",
   "cards": [
     {
       "id": "card_1",
@@ -7,7 +7,6 @@
       "market_hash_name": "SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 2.19,
       "priceChange": 0,
-      "available": 0,
       "history": [
         {
           "date": "2026-06-18",
@@ -30,7 +29,8 @@
           "price": 2.19
         }
       ],
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
+      "soldLast24h": 1
     },
     {
       "id": "card_2",
@@ -38,7 +38,6 @@
       "market_hash_name": "Glitter SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 2.19,
       "priceChange": 0,
-      "available": 0,
       "history": [
         {
           "date": "2026-06-18",
@@ -61,7 +60,9 @@
           "price": 2.19
         }
       ],
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
+      "sellListings": 47,
+      "soldLast24h": 0
     },
     {
       "id": "card_3",
@@ -69,7 +70,6 @@
       "market_hash_name": "Holo SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 4.32,
       "priceChange": 0,
-      "available": 1,
       "history": [
         {
           "date": "2026-06-18",
@@ -92,7 +92,9 @@
           "price": 4.32
         }
       ],
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
+      "sellListings": 40,
+      "soldLast24h": 1
     },
     {
       "id": "card_4",
@@ -100,7 +102,6 @@
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 84.06,
       "priceChange": 0,
-      "available": 0,
       "history": [
         {
           "date": "2026-06-18",
@@ -123,7 +124,9 @@
           "price": 84.06
         }
       ],
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
+      "sellListings": 8,
+      "soldLast24h": 0
     },
     {
       "id": "card_5",
@@ -137,11 +140,28 @@
       "market_hash_name": "SaberLight Player Sticker - TI 2023",
       "priceChange": 0,
       "currentPrice": 2.19,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
+      "sellListings": 342,
+      "soldLast24h": 0
     },
     {
       "id": "card_6",
+      "history": [
+        {
+          "date": "2026-06-22",
+          "price": 2.19
+        }
+      ],
+      "name": "SabeRLighT- (Glitter) 2023",
+      "market_hash_name": "Glitter SaberLight Player Sticker - TI 2023",
+      "priceChange": 0,
+      "currentPrice": 2.19,
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
+      "sellListings": 67,
+      "soldLast24h": 2
+    },
+    {
+      "id": "card_7",
       "history": [
         {
           "date": "2026-06-22",
@@ -152,11 +172,12 @@
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
       "priceChange": 0,
       "currentPrice": 5.09,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
+      "sellListings": 21,
+      "soldLast24h": 0
     },
     {
-      "id": "card_7",
+      "id": "card_8",
       "history": [
         {
           "date": "2026-06-22",
@@ -167,11 +188,12 @@
       "market_hash_name": "Gold SaberLight Player Sticker - TI 2023",
       "priceChange": 0,
       "currentPrice": 98.99,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
+      "sellListings": 7,
+      "soldLast24h": 0
     },
     {
-      "id": "card_8",
+      "id": "card_9",
       "history": [
         {
           "date": "2026-06-22",
@@ -182,11 +204,12 @@
       "market_hash_name": "Saberlight Player Sticker - TI 2025",
       "priceChange": 0,
       "currentPrice": 2.22,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
+      "sellListings": 26,
+      "soldLast24h": 0
     },
     {
-      "id": "card_9",
+      "id": "card_10",
       "history": [
         {
           "date": "2026-06-22",
@@ -197,11 +220,12 @@
       "market_hash_name": "Holo Saberlight Player Sticker - TI 2025",
       "priceChange": 0,
       "currentPrice": 100,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw"
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
+      "sellListings": 4,
+      "soldLast24h": 0
     },
     {
-      "id": "card_10",
+      "id": "card_11",
       "history": [
         {
           "date": "2026-06-22",
@@ -210,10 +234,11 @@
       ],
       "name": "SabeRLighT- (Gold) 2025",
       "market_hash_name": "Gold Saberlight Player Sticker - TI 2025",
+      "sellListings": 4,
+      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "priceChange": 0,
       "currentPrice": 271.77,
-      "available": 0,
-      "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw"
+      "soldLast24h": 0
     }
   ]
 }
