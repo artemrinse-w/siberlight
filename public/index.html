@@ -294,7 +294,7 @@
 
                     <div class="mt-2 pt-2 flex justify-between items-center text-[10px] text-slate-500">
                         <span>Продажи (24ч):</span>
-                        <span class="font-bold text-slate-400">${card.available || 0} шт</span>
+                        <span class="font-bold text-slate-400">${card.available ? `${card.available} шт` : 'Активно'}</span>
                     </div>
                 `;
 

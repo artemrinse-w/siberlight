@@ -207,8 +207,11 @@
                 cardPrice.innerText = `${card.currentPrice.toFixed(2)} ₽`;
                 
                 // Продажи/доступность
-                const count = card.available !== undefined ? card.available : 0;
-                cardAvailable.innerText = `Продажи (24ч): ${count} шт.`;
+                if (card.available) {
+                    cardAvailable.innerText = `Продажи (24ч): ${card.available} шт.`;
+                } else {
+                    cardAvailable.innerText = `Продажи (24ч): Активно`;
+                }
                 
                 // Обновляем превью на основе icon_url стикера с CDN Steam
                 if (card.icon_url) {
