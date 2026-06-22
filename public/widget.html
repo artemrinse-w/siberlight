@@ -17,17 +17,15 @@
         .widget-transition {
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        /* Ник-карточки: вертикальный градиент (белый → цвет темы редкости) + мягкое свечение.
-           Тема задаётся через CSS-переменную --theme-color на #widget-card. */
+        /* Ник-карточки: белый текст + цветное drop-shadow свечение в тон редкости.
+           Реализация через filter (а не background-clip:text), чтобы текст не
+           становился невидимым в средах без GPU/clip-text (OBS Browser Source и т.п.). */
         .nickname {
-            background: linear-gradient(180deg, #ffffff 0%, var(--theme-color, #06b6d4) 110%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            color: transparent;
-            /* drop-shadow корректно работает с прозрачным текстом и подсвечивает контур */
-            filter: drop-shadow(0 0 6px color-mix(in srgb, var(--theme-color, #06b6d4) 55%, transparent))
-                    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.6));
+            color: #ffffff;
+            /* Сильный цветной ореол + тонкая чёрная "подложка" для читаемости на светлом фоне */
+            filter: drop-shadow(0 0 8px color-mix(in srgb, var(--theme-color, #06b6d4) 70%, transparent))
+                    drop-shadow(0 0 2px color-mix(in srgb, var(--theme-color, #06b6d4) 90%, transparent))
+                    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.75));
             letter-spacing: 0.04em;
         }
         /* Тонкая полоска-подчёркивание под ником — для премиального вида */
