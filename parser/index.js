@@ -156,4 +156,10 @@ async function parsePrices() {
     }
 }
 
-parsePrices();
+if (process.argv.includes('--watch')) {
+    console.log('Запущен режим постоянного мониторинга (обновление каждую минуту)...');
+    parsePrices();
+    setInterval(parsePrices, 60000); // 60 секунд
+} else {
+    parsePrices();
+}
