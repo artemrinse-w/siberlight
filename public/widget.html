@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBS Bottom Price Widget with Sparkline and Preview</title>
+    <!-- Подключаем Tailwind CSS для стилей и Chart.js для графиков-трекеров -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Полная прозрачность для наложения в OBS */
+        body {
+            background-color: transparent !important;
+            overflow: hidden;
+        }
+        /* Кастомные плавные переходы для контента (анимация переключения) */
+        .widget-transition {
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+    </style>
+</head>
+<body class="p-1 m-0 h-screen w-screen overflow-hidden">
+
+    <!-- 
+      Основной контейнер виджета. 
+      Спроектирован как резиновый (stretches to fill body), адаптирующийся под любые размеры источника в OBS.
+      Обладает эффектом размытия заднего фона (backdrop-blur), неоновой рамкой и динамической тенью.
+    -->
+    <div id="widget-card" class="widget-transition opacity-0 translate-y-4 w-full h-full bg-slate-950/90 border border-cyan-500/40 rounded-2xl p-4 flex items-center justify-between shadow-[0_0_25px_rgba(6,182,212,0.15)] backdrop-blur-md">
+        
+        <!-- ЛЕВАЯ ЧАСТЬ: Название карточки, статус наличия и превью (резиновая, flex-grow) -->
+        <div class="flex items-center gap-4 h-[70px] flex-[1.2] min-w-0">
+            <!-- Превью карточки -->
+            <div id="card-preview-container" class="flex-shrink-0 w-[70px] h-[70px] bg-slate-900 border border-slate-800/80 rounded-xl p-1 flex items-center justify-center overflow-hidden widget-transition">
+                <img id="card-preview" src="" alt="Превью" class="max-h-full max-w-full object-contain widget-transition opacity-0">
+            </div>
+            
+            <!-- Информация: text с защитой от переполнения (min-w-0 flex-1) -->
+            <div class="flex flex-col justify-between h-full min-w-0 flex-1">
+                <div class="flex items-center gap-2">
+                    <span class="text-[9px] font-black tracking-widest uppercase bg-cyan-950 text-cyan-400 px-2 py-0.5 rounded border border-cyan-800 flex-shrink-0">
+                        LIVE MARKET
+                    </span>
+                    <span id="card-available" class="text-xs text-slate-400 font-medium truncate">
+                        Доступно: -- шт.
+                    </span>
+                </div>
+                <!-- Название карточки с ограничением по длине -->
+                <h2 id="card-name" class="text-base font-black text-white tracking-wide uppercase truncate mb-0.5">
+                    Загрузка...
+                </h2>
+            </div>
+        </div>
+
+        <!-- СРЕДНЯЯ ЧАСТЬ: Текущая цена и индикатор тренда (фиксированная ширина 160px) -->
+        <div class="flex flex-col justify-between h-[70px] w-[160px] flex-shrink-0 border-l border-slate-800/80 pl-6">
+            <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider leading-none">Текущая цена</span>
+            <span id="card-price" class="text-2xl font-black text-white tracking-tight leading-none">0 ₽</span>
+            
+            <!-- Компактный индикатор тренда цены -->
+            <div id="card-trend" class="flex items-center gap-1 text-[11px] font-bold text-slate-400 leading-none">
+                <span>--</span>
+            </div>
+        </div>
+
+        <!-- ПРАВАЯ ЧАСТЬ: Мини-график (Sparkline) тренда цены (резиновая, flex-grow) -->
+        <div class="flex flex-col justify-between h-[70px] flex-1 min-w-[150px] border-l border-slate-800/80 pl-6 relative">
+            <span id="sparkline-title" class="text-[9px] text-slate-500 uppercase font-bold tracking-wider absolute -top-1.5 right-0">Тренд (30д)</span>
+            <div class="w-full h-[55px] mt-3">
+                <canvas id="sparklineChart"></canvas>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        let cardsData = [];
+        let currentIndex = 0;
+        let sparklineInstance = null;
+        let chartTimeout = null; // Для управления переходом графиков (получасовой -> дневной)
+
+        // Константы таймингов
+        const ROTATION_INTERVAL = 6000; // Смена карточки каждые 6 секунд
+        const FETCH_INTERVAL = 30000;    // Запрос свежих данных каждые 30 секунд
+
+        // DOM элементы
+        const widgetCard = document.getElementById('widget-card');
+        const cardName = document.getElementById('card-name');
+        const cardAvailable = document.getElementById('card-available');
+        const cardPrice = document.getElementById('card-price');
+        const cardTrend = document.getElementById('card-trend');
+        const cardPreview = document.getElementById('card-preview');
+        const cardPreviewContainer = document.getElementById('card-preview-container');
+        const canvasCtx = document.getElementById('sparklineChart').getContext('2d');
+
+        // Динамическое разрешение абсолютного URL для обхода ограничений blob-протоколов в iframe
+        function getDataUrl() {
+            const defaultFileName = 'data.json';
+            const timestamp = Date.now();
+            const baseUrl = window.location.href;
+
+            if (baseUrl.startsWith('blob:')) {
+                try {
+                    // Извлекаем чистый HTTP/S URL из blob схемы
+                    const cleanUrl = baseUrl.replace(/^blob:/, '');
+                    const parsed = new URL(cleanUrl);
+                    return `${parsed.origin}/${defaultFileName}?t=${timestamp}`;
+                } catch (e) {
+                    return `/${defaultFileName}?t=${timestamp}`;
+                }
+            }
+
+            try {
+                const resolvedUrl = new URL(defaultFileName, window.location.href);
+                return `${resolvedUrl.href}?t=${timestamp}`;
+            } catch (e) {
+                return `./${defaultFileName}?t=${timestamp}`;
+            }
+        }
+
+        // Вспомогательная функция для генерации реалистичной истории цен в демо-режиме
+        function generateMockHistory(startPrice, endPrice) {
+            const history = [];
+            const steps = 10;
+            for (let i = 0; i <= steps; i++) {
+                const ratio = i / steps;
+                const basePrice = startPrice + (endPrice - startPrice) * ratio;
+                const noise = (i === steps || i === 0) ? 0 : (Math.random() - 0.5) * (startPrice * 0.04);
+                history.push({
+                    date: `2026-06-${18 + i}`,
+                    price: Number((basePrice + noise).toFixed(2))
+                });
+            }
+            return history;
+        }
+
+        // Вспомогательная функция для генерации получасовой истории (интерполяция между предыдущей ценой и текущей)
+        function generateHalfHourlyHistory(history, currentPrice) {
+            const prevPrice = history.length > 1 ? history[history.length - 2].price : currentPrice * 0.98;
+            const points = [];
+            const count = 24; // 12 часов с шагом в 30 мин
+            for (let i = 0; i < count; i++) {
+                const ratio = i / (count - 1);
+                const interpolated = prevPrice + (currentPrice - prevPrice) * ratio;
+                const noise = (i === 0 || i === count - 1) ? 0 : (Math.random() - 0.5) * (currentPrice * 0.015);
+                points.push({
+                    date: `${Math.floor(i / 2)}:${(i % 2) === 0 ? '00' : '30'}`,
+                    price: Number((interpolated + noise).toFixed(2))
+                });
+            }
+            return points;
+        }
+
+        // Запасной набор демонстрационных данных для стикеров SabeRLighT-
+        function getMockCards() {
+            const stickerIcon2022 = 'i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbTtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ';
+            const stickerIcon2023 = 'i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ';
+            const stickerIcon2025 = 'i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw';
+
+            return [
+                { id: "card_1", name: "SabeRLighT- (Normal) 2022", currentPrice: 2.19, available: 260, priceChange: 0.15, icon_url: stickerIcon2022, history: generateMockHistory(2.04, 2.19) },
+                { id: "card_2", name: "SabeRLighT- (Glitter) 2022", currentPrice: 2.19, available: 47, priceChange: -0.10, icon_url: stickerIcon2022, history: generateMockHistory(2.29, 2.19) },
+                { id: "card_3", name: "SabeRLighT- (Holo) 2022", currentPrice: 4.32, available: 40, priceChange: 0.85, icon_url: stickerIcon2022, history: generateMockHistory(3.47, 4.32) },
+                { id: "card_4", name: "SabeRLighT- (Gold) 2022", currentPrice: 84.06, available: 8, priceChange: 5.40, icon_url: stickerIcon2022, history: generateMockHistory(78.66, 84.06) },
+                { id: "card_5", name: "SabeRLighT- (Normal) 2023", currentPrice: 3.25, available: 341, priceChange: 0.05, icon_url: stickerIcon2023, history: generateMockHistory(3.20, 3.25) },
+                { id: "card_6", name: "SabeRLighT- (Holo) 2023", currentPrice: 7.50, available: 21, priceChange: -0.40, icon_url: stickerIcon2023, history: generateMockHistory(7.90, 7.50) },
+                { id: "card_7", name: "SabeRLighT- (Gold) 2023", currentPrice: 134.12, available: 7, priceChange: 12.30, icon_url: stickerIcon2023, history: generateMockHistory(121.82, 134.12) },
+                { id: "card_8", name: "SabeRLighT- (Normal) 2025", currentPrice: 4.50, available: 26, priceChange: 0.20, icon_url: stickerIcon2025, history: generateMockHistory(4.30, 4.50) },
+                { id: "card_9", name: "SabeRLighT- (Holo) 2025", currentPrice: 135.00, available: 4, priceChange: 15.00, icon_url: stickerIcon2025, history: generateMockHistory(120.00, 135.00) },
+                { id: "card_10", name: "SabeRLighT- (Gold) 2025", currentPrice: 371.00, available: 4, priceChange: -18.50, icon_url: stickerIcon2025, history: generateMockHistory(389.50, 371.00) }
+            ];
+        }
+
+        // Получение данных из файла data.json
+        async function fetchPrices() {
+            try {
+                const url = getDataUrl();
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP status ${response.status}`);
+                const data = await response.json();
+                cardsData = data.cards;
+            } catch (err) {
+                console.warn("Не удалось загрузить внешние данные, активируем демонстрационный режим:", err);
+                if (cardsData.length === 0) {
+                    cardsData = getMockCards();
+                }
+            }
+
+            if (cardsData.length > 0 && widgetCard.classList.contains('opacity-0')) {
+                // Самый первый рендер после загрузки данных
+                renderCard(0);
+            }
+        }
+
+        // Рендеринг конкретной карточки и построение мини-графика
+        function renderCard(index) {
+            if (!cardsData || cardsData.length === 0) return;
+            const card = cardsData[index];
+
+            // 1. Плавно скрываем старую информацию (уезжает вниз и затухает)
+            widgetCard.classList.add('opacity-0', 'translate-y-4');
+            cardPreview.classList.add('opacity-0');
+
+            setTimeout(() => {
+                // 2. Обновляем текстовые данные пока блок невидим
+                cardName.innerText = card.name;
+                cardPrice.innerText = `${card.currentPrice.toFixed(2)} ₽`;
+                
+                // Продажи/доступность
+                const count = card.available !== undefined ? card.available : 0;
+                cardAvailable.innerText = `Продажи (24ч): ${count} шт.`;
+                
+                // Обновляем превью на основе icon_url стикера с CDN Steam
+                if (card.icon_url) {
+                    cardPreview.src = `https://community.steamstatic.com/economy/image/${card.icon_url}/128fx128f`;
+                    cardPreview.alt = `Превью для ${card.name}`;
+                } else {
+                    cardPreview.src = '';
+                    cardPreview.alt = 'Нет превью';
+                }
+
+                // Рассчитываем изменения и настраиваем цветовые акценты (зеленый / красный / нейтральный)
+                const change = card.priceChange || 0;
+                let themeColor = '#22d3ee'; // Дефолтный цвет: Cyan (нейтральный)
+                let gradientStart = 'rgba(34, 211, 238, 0.3)';
+
+                if (change > 0) {
+                    // Цена выросла (Зеленый неон)
+                    themeColor = '#10b981'; 
+                    gradientStart = 'rgba(16, 185, 129, 0.35)';
+                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-emerald-400";
+                    cardTrend.innerHTML = `▲ +${change.toFixed(2)} ₽`;
+                    
+                    // Обновляем свечение карточки в зеленый тон
+                    widgetCard.style.borderColor = 'rgba(16, 185, 129, 0.5)';
+                    widgetCard.style.boxShadow = '0 0 25px rgba(16, 185, 129, 0.2)';
+                    cardPreviewContainer.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                } else if (change < 0) {
+                    // Цена упала (Красный неон)
+                    themeColor = '#f43f5e';
+                    gradientStart = 'rgba(244, 63, 94, 0.35)';
+                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-rose-400";
+                    cardTrend.innerHTML = `▼ ${Math.abs(change).toFixed(2)} ₽`;
+                    
+                    // Обновляем свечение карточки в красный тон
+                    widgetCard.style.borderColor = 'rgba(244, 63, 94, 0.5)';
+                    widgetCard.style.boxShadow = '0 0 25px rgba(244, 63, 94, 0.2)';
+                    cardPreviewContainer.style.borderColor = 'rgba(244, 63, 94, 0.4)';
+                } else {
+                    // Без изменений
+                    cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-slate-400";
+                    cardTrend.innerHTML = `• Без изменений`;
+                    
+                    // Обновляем свечение карточки в стандартный бирюзовый тон
+                    widgetCard.style.borderColor = 'rgba(6, 182, 212, 0.4)';
+                    widgetCard.style.boxShadow = '0 0 25px rgba(6, 182, 212, 0.15)';
+                    cardPreviewContainer.style.borderColor = 'rgba(6, 182, 212, 0.3)';
+                }
+
+                // 3. Строим или обновляем мини-график (sparkline)
+                // Сначала очищаем старый таймер смены графиков
+                clearTimeout(chartTimeout);
+                
+                // Генерируем детальную 12-часовую историю (с шагом 30 минут)
+                const halfHourly = generateHalfHourlyHistory(card.history, card.currentPrice);
+                document.getElementById('sparkline-title').innerText = 'Тренд (12ч)';
+                buildSparkline(halfHourly, themeColor, gradientStart);
+
+                // 4. Плавно проявляем обновленный виджет обратно
+                widgetCard.classList.remove('opacity-0', 'translate-y-4');
+                cardPreview.classList.remove('opacity-0');
+
+                // 5. Через 2 секунды (когда слайд полностью виден) перетекаем в 30-дневный график
+                chartTimeout = setTimeout(() => {
+                    document.getElementById('sparkline-title').innerText = 'Тренд (30д)';
+                    buildSparkline(card.history, themeColor, gradientStart);
+                }, 2000);
+            }, 600); //   transition
+        }
+
+        // Построение легкого бесшовного мини-графика (без осей, легенд и сеток)
+        function buildSparkline(history, lineColor, areaColor) {
+            if (!history || history.length === 0) return;
+            
+            const labels = history.map(h => h.date);
+            const prices = history.map(h => h.price);
+
+            // Создаем красивый вертикальный градиент под линией графика
+            const gradient = canvasCtx.createLinearGradient(0, 0, 0, 55);
+            gradient.addColorStop(0, areaColor);
+            gradient.addColorStop(1, 'rgba(15, 23, 42, 0)');
+
+            if (sparklineInstance) {
+                // Если график уже существует, плавно обновляем его данные
+                sparklineInstance.data.labels = labels;
+                sparklineInstance.data.datasets[0].data = prices;
+                sparklineInstance.data.datasets[0].borderColor = lineColor;
+                sparklineInstance.data.datasets[0].backgroundColor = gradient;
+                sparklineInstance.update();
+            } else {
+                // Инициализируем график при первом запуске
+                sparklineInstance = new Chart(canvasCtx, {
+                    type: 'line',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            data: prices,
+                            borderColor: lineColor,
+                            borderWidth: 2,
+                            pointRadius: 0,           // Убираем точки, чтобы график выглядел гладко
+                            pointHoverRadius: 0,
+                            fill: true,
+                            backgroundColor: gradient,
+                            tension: 0.35             // Мягкое сглаживание углов линии
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            tooltip: { enabled: false } // Отключаем тултипы на стриме
+                        },
+                        scales: {
+                            // Полностью скрываем шкалу X и Y для получения чистого "sparkline"
+                            x: { display: false },
+                            y: { display: false }
+                        },
+                        animation: {
+                            duration: 1000,            // Увеличим время анимации для плавности морфинга
+                            easing: 'easeInOutQuad'
+                        }
+                    }
+                });
+            }
+        }
+
+        // Запуск циклической смены карточек (карусель)
+        function startCarousel() {
+            setInterval(() => {
+                if (cardsData.length === 0) return;
+                // Переходим к следующей карточке (по циклу от 0 до конца списка)
+                currentIndex = (currentIndex + 1) % cardsData.length;
+                renderCard(currentIndex);
+            }, ROTATION_INTERVAL);
+        }
+
+        // Инициализация скрипта
+        fetchPrices();
+        startCarousel();
+
+        // Постоянный фоновый мониторинг файла данных на сервере/гитхабе
+        setInterval(fetchPrices, FETCH_INTERVAL);
+    </script>
+</body>
+</html>

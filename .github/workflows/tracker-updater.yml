@@ -1,0 +1,68 @@
+name: Cyberlight Price Auto-Updater & Deploy
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  schedule:
+    - cron: '*/10 * * * *' # Запуск каждые 10 минут
+  workflow_dispatch: # Возможность ручного запуска
+
+# Разрешения для записи изменений в репозиторий и публикации на GitHub Pages
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Предотвращает одновременные деплои
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  update-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: 'npm'
+        cache-dependency-path: parser/package.json
+
+    - name: Install dependencies
+      run: |
+        cd parser
+        npm install
+
+    - name: Run parser script
+      run: |
+        cd parser
+        node index.js
+
+    - name: Commit and push changes
+      run: |
+        git config --global user.name "GitHub Action Bot"
+        git config --global user.email "action@github.com"
+        git add public/data.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update prices: $(date -u)" && git push)
+
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: 'public'
+
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
