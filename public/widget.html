@@ -293,8 +293,19 @@
                 widgetCard.style.setProperty('--theme-color', themeColor);
                 cardPreviewContainer.style.borderColor = `${themeColor}40`;
 
-                // Рассчитываем изменения тренда цены (зеленый / красный / нейтральный)
-                const change = card.priceChange || 0;
+                // Рассчитываем изменения тренда цены (зеленый / красный / нейтральный).
+                // Приоритет: явный priceChange из data.json. Если его нет или он 0 —
+                // вычисляем дельту из history (самая старая точка → последняя).
+                let change = (typeof card.priceChange === 'number' && card.priceChange !== 0)
+                    ? card.priceChange
+                    : 0;
+                if (change === 0 && Array.isArray(card.history) && card.history.length >= 2) {
+                    const first = Number(card.history[0].price);
+                    const last = Number(card.history[card.history.length - 1].price);
+                    if (!isNaN(first) && !isNaN(last)) {
+                        change = Number((last - first).toFixed(2));
+                    }
+                }
                 if (change > 0) {
                     cardTrend.className = "flex items-center gap-1 text-[11px] font-bold text-emerald-400";
                     cardTrend.innerHTML = `▲ +${change.toFixed(2)} ₽`;
