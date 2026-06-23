@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-23T15:29:33.018Z",
+  "lastUpdated": "2026-06-23T17:27:48.661Z",
   "cards": [
     {
       "id": "card_1",
@@ -35,7 +35,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 262
+      "sellListings": 263
     },
     {
       "id": "card_2",
@@ -71,7 +71,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "sellListings": 44,
-      "soldLast24h": 3
+      "soldLast24h": 0
     },
     {
       "id": "card_3",
