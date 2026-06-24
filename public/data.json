@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-24T08:49:20.815Z",
+  "lastUpdated": "2026-06-24T11:33:24.803Z",
   "cards": [
     {
       "id": "card_1",
@@ -39,7 +39,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 264
+      "sellListings": 263
     },
     {
       "id": "card_2",
@@ -207,7 +207,7 @@
       "currentPrice": 2.19,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 65,
-      "soldLast24h": 1
+      "soldLast24h": 0
     },
     {
       "id": "card_7",
