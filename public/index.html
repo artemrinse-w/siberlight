@@ -247,12 +247,28 @@
                     cardType = "Gold";
                 }
 
-                const change = card.priceChange || 0;
+                let change = (typeof card.priceChange === 'number' && card.priceChange !== 0)
+                    ? card.priceChange
+                    : 0;
+                if (change === 0 && Array.isArray(card.history) && card.history.length >= 2) {
+                    const last = Number(card.history[card.history.length - 1].price);
+                    const prev = Number(card.history[card.history.length - 2].price);
+                    if (!isNaN(last) && !isNaN(prev)) {
+                        change = Number((last - prev).toFixed(2));
+                    }
+                    if (change === 0 && card.history.length >= 2) {
+                        const first = Number(card.history[0].price);
+                        if (!isNaN(first) && !isNaN(last)) {
+                            change = Number((last - first).toFixed(2));
+                        }
+                    }
+                }
+
                 let trendHtml = '';
                 if (change > 0) {
                     trendHtml = `<span class="text-xs font-semibold text-emerald-400 flex items-center">▲ +${change.toFixed(2)} ₽</span>`;
                 } else if (change < 0) {
-                    trendHtml = `<span class="text-xs font-semibold text-rose-500 flex items-center">▼ ${change.toFixed(2)} ₽</span>`;
+                    trendHtml = `<span class="text-xs font-semibold text-rose-500 flex items-center">▼ ${Math.abs(change).toFixed(2)} ₽</span>`;
                 } else {
                     trendHtml = `<span class="text-xs font-medium text-slate-500">— 0.00 ₽</span>`;
                 }

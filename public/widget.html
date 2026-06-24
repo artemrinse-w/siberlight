@@ -165,20 +165,20 @@
             return history;
         }
 
-        // Вспомогательная функция для генерации часовой истории (последний час, шаг 5 минут = 12 точек).
+        // Вспомогательная функция для генерации 24-часовой истории (последние 24 часа, шаг 2 часа = 12 точек).
         // Интерполирует значения между предыдущей ценой и текущей, слегка шевеля их шумом.
-        function generateHourlyHistory(history, currentPrice) {
+        function generateDailyHistory(history, currentPrice) {
             const prevPrice = history.length > 1 ? history[history.length - 2].price : currentPrice * 0.98;
             const points = [];
-            const count = 12; // 1 час с шагом в 5 минут
-            // Базовая "минус-часовая" точка отсчёта, чтобы метки выглядели реалистично
+            const count = 12; // 24 часа с шагом в 2 часа
+            // Базовая "минус-суточная" точка отсчёта, чтобы метки выглядели реалистично
             const now = new Date();
-            const startMs = now.getTime() - 60 * 60 * 1000;
+            const startMs = now.getTime() - 24 * 60 * 60 * 1000;
             for (let i = 0; i < count; i++) {
                 const ratio = i / (count - 1);
                 const interpolated = prevPrice + (currentPrice - prevPrice) * ratio;
-                const noise = (i === 0 || i === count - 1) ? 0 : (Math.random() - 0.5) * (currentPrice * 0.012);
-                const pointMs = startMs + (60 * 60 * 1000) * ratio;
+                const noise = (i === 0 || i === count - 1) ? 0 : (Math.random() - 0.5) * (currentPrice * 0.02);
+                const pointMs = startMs + (24 * 60 * 60 * 1000) * ratio;
                 const d = new Date(pointMs);
                 const hh = String(d.getHours()).padStart(2, '0');
                 const mm = String(d.getMinutes()).padStart(2, '0');
@@ -381,11 +381,11 @@
             document.getElementById('sparkline-title').innerText = 'Тренд (30д)';
             buildSparkline(card.history, themeColor, gradientStart);
 
-            // 3. Через 5 секунд перетекаем на детальный часовой график
+            // 3. Через 5 секунд перетекаем на детальный суточный график
             chartTimeout = setTimeout(() => {
-                const hourly = generateHourlyHistory(card.history, card.currentPrice);
-                document.getElementById('sparkline-title').innerText = 'Тренд (1ч)';
-                buildSparkline(hourly, themeColor, gradientStart);
+                const daily = generateDailyHistory(card.history, card.currentPrice);
+                document.getElementById('sparkline-title').innerText = 'Тренд (24ч)';
+                buildSparkline(daily, themeColor, gradientStart);
             }, 5000);
         }
 
