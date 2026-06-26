@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T00:00:39.706Z",
+  "lastUpdated": "2026-06-26T04:22:07.401Z",
   "cards": [
     {
       "id": "card_1",
@@ -39,18 +39,22 @@
         {
           "date": "2026-06-25",
           "price": 4.55
+        },
+        {
+          "date": "2026-06-26",
+          "price": 4.55
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 10
+      "sellListings": 11
     },
     {
       "id": "card_2",
       "name": "SabeRLighT- (Glitter) 2022",
       "market_hash_name": "Glitter SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 3.09,
-      "priceChange": 0,
+      "currentPrice": 2.5,
+      "priceChange": -0.59,
       "history": [
         {
           "date": "2026-06-18",
@@ -83,10 +87,14 @@
         {
           "date": "2026-06-25",
           "price": 3.09
+        },
+        {
+          "date": "2026-06-26",
+          "price": 2.5
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 15,
+      "sellListings": 16,
       "soldLast24h": 0
     },
     {
@@ -126,6 +134,10 @@
         },
         {
           "date": "2026-06-25",
+          "price": 4.32
+        },
+        {
+          "date": "2026-06-26",
           "price": 4.32
         }
       ],
@@ -171,6 +183,10 @@
         {
           "date": "2026-06-25",
           "price": 84.06
+        },
+        {
+          "date": "2026-06-26",
+          "price": 84.06
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -195,6 +211,10 @@
         {
           "date": "2026-06-25",
           "price": 2.19
+        },
+        {
+          "date": "2026-06-26",
+          "price": 2.19
         }
       ],
       "name": "SabeRLighT- (Normal) 2023",
@@ -202,7 +222,7 @@
       "priceChange": 0,
       "currentPrice": 2.19,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 291,
+      "sellListings": 293,
       "soldLast24h": 0
     },
     {
@@ -222,6 +242,10 @@
         },
         {
           "date": "2026-06-25",
+          "price": 2.19
+        },
+        {
+          "date": "2026-06-26",
           "price": 2.19
         }
       ],
@@ -251,6 +275,10 @@
         {
           "date": "2026-06-25",
           "price": 5.09
+        },
+        {
+          "date": "2026-06-26",
+          "price": 5.09
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
@@ -278,6 +306,10 @@
         },
         {
           "date": "2026-06-25",
+          "price": 98.99
+        },
+        {
+          "date": "2026-06-26",
           "price": 98.99
         }
       ],
@@ -307,6 +339,10 @@
         {
           "date": "2026-06-25",
           "price": 3.09
+        },
+        {
+          "date": "2026-06-26",
+          "price": 3.09
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
@@ -335,6 +371,10 @@
         {
           "date": "2026-06-25",
           "price": 100.01
+        },
+        {
+          "date": "2026-06-26",
+          "price": 100.01
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
@@ -362,6 +402,10 @@
         },
         {
           "date": "2026-06-25",
+          "price": 271.77
+        },
+        {
+          "date": "2026-06-26",
           "price": 271.77
         }
       ],
