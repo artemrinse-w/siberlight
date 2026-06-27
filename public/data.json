@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-26T23:21:38.593Z",
+  "lastUpdated": "2026-06-27T01:26:45.845Z",
   "cards": [
     {
       "id": "card_1",
@@ -42,6 +42,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 3.31
+        },
+        {
+          "date": "2026-06-27",
           "price": 3.31
         }
       ],
@@ -91,6 +95,10 @@
         {
           "date": "2026-06-26",
           "price": 2.6
+        },
+        {
+          "date": "2026-06-27",
+          "price": 2.6
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -138,6 +146,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 4.62
+        },
+        {
+          "date": "2026-06-27",
           "price": 4.62
         }
       ],
@@ -187,6 +199,10 @@
         {
           "date": "2026-06-26",
           "price": 89.41
+        },
+        {
+          "date": "2026-06-27",
+          "price": 89.41
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -214,6 +230,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 2.34
+        },
+        {
+          "date": "2026-06-27",
           "price": 2.34
         }
       ],
@@ -247,6 +267,10 @@
         {
           "date": "2026-06-26",
           "price": 2.34
+        },
+        {
+          "date": "2026-06-27",
+          "price": 2.34
         }
       ],
       "name": "SabeRLighT- (Glitter) 2023",
@@ -278,6 +302,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 5.39
+        },
+        {
+          "date": "2026-06-27",
           "price": 5.39
         }
       ],
@@ -311,6 +339,10 @@
         {
           "date": "2026-06-26",
           "price": 98.99
+        },
+        {
+          "date": "2026-06-27",
+          "price": 98.99
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -343,12 +375,16 @@
         {
           "date": "2026-06-26",
           "price": 3.1
+        },
+        {
+          "date": "2026-06-27",
+          "price": 3
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
       "market_hash_name": "Saberlight Player Sticker - TI 2025",
-      "priceChange": 0,
-      "currentPrice": 3.1,
+      "priceChange": -0.1,
+      "currentPrice": 3,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 15,
       "soldLast24h": 0
@@ -374,6 +410,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 100.01
+        },
+        {
+          "date": "2026-06-27",
           "price": 100.01
         }
       ],
@@ -406,6 +446,10 @@
         },
         {
           "date": "2026-06-26",
+          "price": 290.74
+        },
+        {
+          "date": "2026-06-27",
           "price": 290.74
         }
       ],
