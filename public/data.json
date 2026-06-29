@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-28T23:49:32.773Z",
+  "lastUpdated": "2026-06-29T01:59:41.491Z",
   "cards": [
     {
       "id": "card_1",
@@ -50,6 +50,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 2.34
+        },
+        {
+          "date": "2026-06-29",
           "price": 2.34
         }
       ],
@@ -107,6 +111,10 @@
         {
           "date": "2026-06-28",
           "price": 2.34
+        },
+        {
+          "date": "2026-06-29",
+          "price": 2.34
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -162,6 +170,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 4.6
+        },
+        {
+          "date": "2026-06-29",
           "price": 4.6
         }
       ],
@@ -219,6 +231,10 @@
         {
           "date": "2026-06-28",
           "price": 89.41
+        },
+        {
+          "date": "2026-06-29",
+          "price": 89.41
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -254,6 +270,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 2.34
+        },
+        {
+          "date": "2026-06-29",
           "price": 2.34
         }
       ],
@@ -295,6 +315,10 @@
         {
           "date": "2026-06-28",
           "price": 2.34
+        },
+        {
+          "date": "2026-06-29",
+          "price": 2.34
         }
       ],
       "name": "SabeRLighT- (Glitter) 2023",
@@ -334,6 +358,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 5.39
+        },
+        {
+          "date": "2026-06-29",
           "price": 5.39
         }
       ],
@@ -375,6 +403,10 @@
         {
           "date": "2026-06-28",
           "price": 98.99
+        },
+        {
+          "date": "2026-06-29",
+          "price": 98.99
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -414,6 +446,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 2.34
+        },
+        {
+          "date": "2026-06-29",
           "price": 2.34
         }
       ],
@@ -455,6 +491,10 @@
         {
           "date": "2026-06-28",
           "price": 100.01
+        },
+        {
+          "date": "2026-06-29",
+          "price": 100.01
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
@@ -494,6 +534,10 @@
         },
         {
           "date": "2026-06-28",
+          "price": 290.74
+        },
+        {
+          "date": "2026-06-29",
           "price": 290.74
         }
       ],
