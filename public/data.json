@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-06-29T06:56:05.859Z",
+  "lastUpdated": "2026-06-29T11:56:46.168Z",
   "cards": [
     {
       "id": "card_1",
@@ -282,7 +282,7 @@
       "priceChange": 0,
       "currentPrice": 2.34,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 300,
+      "sellListings": 389,
       "soldLast24h": 0
     },
     {
@@ -326,7 +326,7 @@
       "priceChange": 0,
       "currentPrice": 2.34,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 62,
+      "sellListings": 63,
       "soldLast24h": 0
     },
     {
@@ -371,7 +371,7 @@
       "currentPrice": 5.39,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 20,
-      "soldLast24h": 0
+      "soldLast24h": 4
     },
     {
       "id": "card_8",
