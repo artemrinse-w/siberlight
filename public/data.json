@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-10T00:11:03.234Z",
+  "lastUpdated": "2026-07-10T04:13:36.476Z",
   "cards": [
     {
       "id": "card_1",
@@ -102,15 +102,15 @@
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "soldLast24h": 0,
-      "sellListings": 100
+      "soldLast24h": 1,
+      "sellListings": 99
     },
     {
       "id": "card_2",
       "name": "SabeRLighT- (Glitter) 2022",
       "market_hash_name": "Glitter SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 2.52,
-      "priceChange": 0,
+      "currentPrice": 2.46,
+      "priceChange": -0.06,
       "history": [
         {
           "date": "2026-06-18",
@@ -202,11 +202,11 @@
         },
         {
           "date": "2026-07-10",
-          "price": 2.52
+          "price": 2.46
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 19,
+      "sellListings": 20,
       "soldLast24h": 0
     },
     {
