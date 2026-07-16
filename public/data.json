@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-16T08:27:54.896Z",
+  "lastUpdated": "2026-07-16T10:27:07.919Z",
   "cards": [
     {
       "id": "card_1",
@@ -847,7 +847,7 @@
       "currentPrice": 6.02,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 13,
-      "soldLast24h": 1
+      "soldLast24h": 0
     },
     {
       "id": "card_8",
@@ -1293,7 +1293,7 @@
       "market_hash_name": "Gold Saberlight Player Sticker - TI 2025",
       "sellListings": 3,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
-      "priceChange": -0.75,
+      "priceChange": 0,
       "currentPrice": 289.74,
       "soldLast24h": 0
     }
