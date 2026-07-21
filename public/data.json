@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-21T21:35:38.004Z",
+  "lastUpdated": "2026-07-21T22:32:11.831Z",
   "cards": [
     {
       "id": "card_1",
@@ -131,7 +131,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 103
+      "sellListings": 104
     },
     {
       "id": "card_2",
@@ -270,7 +270,7 @@
       "name": "SabeRLighT- (Holo) 2022",
       "market_hash_name": "Holo SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 4.1,
-      "priceChange": 0.01,
+      "priceChange": 0,
       "history": [
         {
           "date": "2026-06-22",
@@ -402,7 +402,7 @@
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 89.84,
-      "priceChange": 0.14,
+      "priceChange": 0,
       "history": [
         {
           "date": "2026-06-22",
@@ -1051,7 +1051,7 @@
       ],
       "name": "SabeRLighT- (Gold) 2023",
       "market_hash_name": "Gold SaberLight Player Sticker - TI 2023",
-      "priceChange": 0.16,
+      "priceChange": 0,
       "currentPrice": 87.9,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 6,
@@ -1315,7 +1315,7 @@
       ],
       "name": "SabeRLighT- (Holo) 2025",
       "market_hash_name": "Holo Saberlight Player Sticker - TI 2025",
-      "priceChange": 0.13,
+      "priceChange": 0,
       "currentPrice": 60.64,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 5,
@@ -1449,7 +1449,7 @@
       "market_hash_name": "Gold Saberlight Player Sticker - TI 2025",
       "sellListings": 3,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
-      "priceChange": 1.21,
+      "priceChange": 0,
       "currentPrice": 292.33,
       "soldLast24h": 0
     }
