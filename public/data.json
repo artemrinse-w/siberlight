@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-20T23:17:13.334Z",
+  "lastUpdated": "2026-07-21T00:14:18.631Z",
   "cards": [
     {
       "id": "card_1",
@@ -8,10 +8,6 @@
       "currentPrice": 2.37,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-06-21",
-          "price": 2.33
-        },
         {
           "date": "2026-06-22",
           "price": 2.19
@@ -127,11 +123,15 @@
         {
           "date": "2026-07-20",
           "price": 2.37
+        },
+        {
+          "date": "2026-07-21",
+          "price": 2.37
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 102
+      "sellListings": 103
     },
     {
       "id": "card_2",
@@ -140,10 +140,6 @@
       "currentPrice": 2.49,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-06-21",
-          "price": 8.25
-        },
         {
           "date": "2026-06-22",
           "price": 2.2
@@ -259,6 +255,10 @@
         {
           "date": "2026-07-20",
           "price": 2.49
+        },
+        {
+          "date": "2026-07-21",
+          "price": 2.49
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -272,10 +272,6 @@
       "currentPrice": 4.09,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-06-21",
-          "price": 13.05
-        },
         {
           "date": "2026-06-22",
           "price": 4.32
@@ -391,6 +387,10 @@
         {
           "date": "2026-07-20",
           "price": 4.09
+        },
+        {
+          "date": "2026-07-21",
+          "price": 4.09
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -404,10 +404,6 @@
       "currentPrice": 89.7,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-06-21",
-          "price": 57.1
-        },
         {
           "date": "2026-06-22",
           "price": 84.06
@@ -522,6 +518,10 @@
         },
         {
           "date": "2026-07-20",
+          "price": 89.7
+        },
+        {
+          "date": "2026-07-21",
           "price": 89.7
         }
       ],
@@ -646,6 +646,10 @@
         },
         {
           "date": "2026-07-20",
+          "price": 2.37
+        },
+        {
+          "date": "2026-07-21",
           "price": 2.37
         }
       ],
@@ -775,6 +779,10 @@
         {
           "date": "2026-07-20",
           "price": 2.37
+        },
+        {
+          "date": "2026-07-21",
+          "price": 2.37
         }
       ],
       "name": "SabeRLighT- (Glitter) 2023",
@@ -902,6 +910,10 @@
         },
         {
           "date": "2026-07-20",
+          "price": 6.07
+        },
+        {
+          "date": "2026-07-21",
           "price": 6.07
         }
       ],
@@ -1031,6 +1043,10 @@
         {
           "date": "2026-07-20",
           "price": 87.74
+        },
+        {
+          "date": "2026-07-21",
+          "price": 87.74
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -1158,6 +1174,10 @@
         },
         {
           "date": "2026-07-20",
+          "price": 2.37
+        },
+        {
+          "date": "2026-07-21",
           "price": 2.37
         }
       ],
@@ -1287,6 +1307,10 @@
         {
           "date": "2026-07-20",
           "price": 60.51
+        },
+        {
+          "date": "2026-07-21",
+          "price": 60.51
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
@@ -1414,6 +1438,10 @@
         },
         {
           "date": "2026-07-20",
+          "price": 291.12
+        },
+        {
+          "date": "2026-07-21",
           "price": 291.12
         }
       ],
