@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-22T17:53:36.272Z",
+  "lastUpdated": "2026-07-22T18:54:27.234Z",
   "cards": [
     {
       "id": "card_1",
@@ -263,14 +263,14 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "sellListings": 20,
-      "soldLast24h": 1
+      "soldLast24h": 0
     },
     {
       "id": "card_3",
       "name": "SabeRLighT- (Holo) 2022",
       "market_hash_name": "Holo SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 4.1,
-      "priceChange": 0,
+      "currentPrice": 3.34,
+      "priceChange": -0.76,
       "history": [
         {
           "date": "2026-06-23",
@@ -390,11 +390,11 @@
         },
         {
           "date": "2026-07-22",
-          "price": 4.1
+          "price": 3.34
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 36,
+      "sellListings": 37,
       "soldLast24h": 0
     },
     {
