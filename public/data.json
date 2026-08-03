@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-03T16:35:03.049Z",
+  "lastUpdated": "2026-08-03T18:22:05.112Z",
   "cards": [
     {
       "id": "card_1",
@@ -131,7 +131,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 138
+      "sellListings": 137
     },
     {
       "id": "card_2",
@@ -914,15 +914,15 @@
         },
         {
           "date": "2026-08-03",
-          "price": 6
+          "price": 6.3
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
-      "priceChange": 0,
-      "currentPrice": 6,
+      "priceChange": 0.3,
+      "currentPrice": 6.3,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 13,
+      "sellListings": 12,
       "soldLast24h": 0
     },
     {
