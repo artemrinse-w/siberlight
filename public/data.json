@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-08-11T15:33:16.034Z",
+  "lastUpdated": "2026-08-11T16:28:22.165Z",
   "cards": [
     {
       "id": "card_1",
@@ -790,7 +790,7 @@
       "priceChange": 0,
       "currentPrice": 2.49,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 60,
+      "sellListings": 61,
       "soldLast24h": 0
     },
     {
@@ -914,15 +914,15 @@
         },
         {
           "date": "2026-08-11",
-          "price": 6.5
+          "price": 6.44
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
-      "priceChange": 0,
-      "currentPrice": 6.5,
+      "priceChange": -0.06,
+      "currentPrice": 6.44,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 12,
+      "sellListings": 13,
       "soldLast24h": 0
     },
     {
@@ -1051,7 +1051,7 @@
       ],
       "name": "SabeRLighT- (Gold) 2023",
       "market_hash_name": "Gold SaberLight Player Sticker - TI 2023",
-      "priceChange": -1.92,
+      "priceChange": 0,
       "currentPrice": 126.97,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 5,
@@ -1178,15 +1178,15 @@
         },
         {
           "date": "2026-08-11",
-          "price": 2.55
+          "price": 2.52
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
       "market_hash_name": "Saberlight Player Sticker - TI 2025",
-      "priceChange": 0,
-      "currentPrice": 2.55,
+      "priceChange": -0.03,
+      "currentPrice": 2.52,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
-      "sellListings": 39,
+      "sellListings": 40,
       "soldLast24h": 1
     },
     {
