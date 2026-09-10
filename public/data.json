@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-09-10T01:06:12.757Z",
+  "lastUpdated": "2026-09-10T05:55:07.064Z",
   "cards": [
     {
       "id": "card_1",
@@ -914,15 +914,15 @@
         },
         {
           "date": "2026-09-10",
-          "price": 8.98
+          "price": 7.44
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
-      "priceChange": 0,
-      "currentPrice": 8.98,
+      "priceChange": -1.54,
+      "currentPrice": 7.44,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 17,
+      "sellListings": 18,
       "soldLast24h": 0
     },
     {
