@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-02T19:55:30.896Z",
+  "lastUpdated": "2026-10-02T23:29:54.448Z",
   "cards": [
     {
       "id": "card_1",
@@ -401,8 +401,8 @@
       "id": "card_4",
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 94.83,
-      "priceChange": 0,
+      "currentPrice": 95.12,
+      "priceChange": 0.29,
       "history": [
         {
           "date": "2026-09-03",
@@ -522,7 +522,7 @@
         },
         {
           "date": "2026-10-02",
-          "price": 94.83
+          "price": 95.12
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -1310,13 +1310,13 @@
         },
         {
           "date": "2026-10-02",
-          "price": 62.99
+          "price": 62.51
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
       "market_hash_name": "Holo Saberlight Player Sticker - TI 2025",
-      "priceChange": 0,
-      "currentPrice": 62.99,
+      "priceChange": -0.48,
+      "currentPrice": 62.51,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 6,
       "soldLast24h": 0
@@ -1442,15 +1442,15 @@
         },
         {
           "date": "2026-10-02",
-          "price": 305.11
+          "price": 304.89
         }
       ],
       "name": "SabeRLighT- (Gold) 2025",
       "market_hash_name": "Gold Saberlight Player Sticker - TI 2025",
       "sellListings": 3,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
-      "priceChange": 0,
-      "currentPrice": 305.11,
+      "priceChange": -0.22,
+      "currentPrice": 304.89,
       "soldLast24h": 0
     }
   ]
