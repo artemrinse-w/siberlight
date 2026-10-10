@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-10T14:40:03.983Z",
+  "lastUpdated": "2026-10-10T18:51:03.061Z",
   "cards": [
     {
       "id": "card_1",
       "name": "SabeRLighT- (Normal) 2022",
       "market_hash_name": "SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 46.89,
-      "priceChange": 44.34,
+      "currentPrice": 7.48,
+      "priceChange": -39.41,
       "history": [
         {
           "date": "2026-09-11",
@@ -126,12 +126,12 @@
         },
         {
           "date": "2026-10-10",
-          "price": 46.89
+          "price": 7.48
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "soldLast24h": 197,
-      "sellListings": 6
+      "soldLast24h": 201,
+      "sellListings": 64
     },
     {
       "id": "card_2",
@@ -262,7 +262,7 @@
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 37,
+      "sellListings": 38,
       "soldLast24h": 6
     },
     {
@@ -658,7 +658,7 @@
       "priceChange": 0,
       "currentPrice": 2.55,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 381,
+      "sellListings": 380,
       "soldLast24h": 0
     },
     {
