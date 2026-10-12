@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-12T07:21:45.356Z",
+  "lastUpdated": "2026-10-12T16:51:04.877Z",
   "cards": [
     {
       "id": "card_1",
       "name": "SabeRLighT- (Normal) 2022",
       "market_hash_name": "SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 3.39,
-      "priceChange": 0,
+      "currentPrice": 3.2,
+      "priceChange": -0.19,
       "history": [
         {
           "date": "2026-09-13",
@@ -126,12 +126,12 @@
         },
         {
           "date": "2026-10-12",
-          "price": 3.39
+          "price": 3.2
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "soldLast24h": 1,
-      "sellListings": 76
+      "soldLast24h": 0,
+      "sellListings": 77
     },
     {
       "id": "card_2",
@@ -262,7 +262,7 @@
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 37,
+      "sellListings": 38,
       "soldLast24h": 0
     },
     {
@@ -394,15 +394,15 @@
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 25,
+      "sellListings": 26,
       "soldLast24h": 0
     },
     {
       "id": "card_4",
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 96.17,
-      "priceChange": 0,
+      "currentPrice": 87.7,
+      "priceChange": -8.47,
       "history": [
         {
           "date": "2026-09-13",
@@ -522,11 +522,11 @@
         },
         {
           "date": "2026-10-12",
-          "price": 96.17
+          "price": 87.7
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 7,
+      "sellListings": 8,
       "soldLast24h": 0
     },
     {
@@ -1187,7 +1187,7 @@
       "currentPrice": 2.55,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 41,
-      "soldLast24h": 1
+      "soldLast24h": 0
     },
     {
       "id": "card_10",
