@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-15T15:47:28.986Z",
+  "lastUpdated": "2026-10-15T19:28:11.853Z",
   "cards": [
     {
       "id": "card_1",
@@ -401,8 +401,8 @@
       "id": "card_4",
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
-      "currentPrice": 86.65,
-      "priceChange": 0,
+      "currentPrice": 94.48,
+      "priceChange": 7.83,
       "history": [
         {
           "date": "2026-09-16",
@@ -522,12 +522,12 @@
         },
         {
           "date": "2026-10-15",
-          "price": 86.65
+          "price": 94.48
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 8,
-      "soldLast24h": 0
+      "sellListings": 7,
+      "soldLast24h": 1
     },
     {
       "id": "card_5",
