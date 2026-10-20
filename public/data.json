@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T16:55:51.377Z",
+  "lastUpdated": "2026-10-20T20:15:18.734Z",
   "cards": [
     {
       "id": "card_1",
@@ -263,7 +263,7 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "sellListings": 37,
-      "soldLast24h": 0
+      "soldLast24h": 1
     },
     {
       "id": "card_3",
@@ -526,7 +526,7 @@
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 8,
+      "sellListings": 4,
       "soldLast24h": 0
     },
     {
@@ -658,8 +658,8 @@
       "priceChange": 0,
       "currentPrice": 2.49,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 394,
-      "soldLast24h": 0
+      "sellListings": 389,
+      "soldLast24h": 5
     },
     {
       "id": "card_6",
@@ -923,7 +923,7 @@
       "currentPrice": 5.96,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 24,
-      "soldLast24h": 3
+      "soldLast24h": 0
     },
     {
       "id": "card_8",
@@ -1046,16 +1046,16 @@
         },
         {
           "date": "2026-10-20",
-          "price": 99.75
+          "price": 99.99
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
       "market_hash_name": "Gold SaberLight Player Sticker - TI 2023",
-      "priceChange": 0,
-      "currentPrice": 99.75,
+      "priceChange": 0.24,
+      "currentPrice": 99.99,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 4,
-      "soldLast24h": 0
+      "sellListings": 3,
+      "soldLast24h": 1
     },
     {
       "id": "card_9",
