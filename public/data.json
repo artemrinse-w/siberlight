@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-20T23:12:48.171Z",
+  "lastUpdated": "2026-10-21T01:35:54.173Z",
   "cards": [
     {
       "id": "card_1",
@@ -8,10 +8,6 @@
       "currentPrice": 2.5,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 2.52
-        },
         {
           "date": "2026-09-22",
           "price": 2.52
@@ -127,6 +123,10 @@
         {
           "date": "2026-10-20",
           "price": 2.5
+        },
+        {
+          "date": "2026-10-21",
+          "price": 2.5
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -140,10 +140,6 @@
       "currentPrice": 2.49,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 2.52
-        },
         {
           "date": "2026-09-22",
           "price": 2.52
@@ -259,6 +255,10 @@
         {
           "date": "2026-10-20",
           "price": 2.49
+        },
+        {
+          "date": "2026-10-21",
+          "price": 2.49
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -272,10 +272,6 @@
       "currentPrice": 19,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 21.52
-        },
         {
           "date": "2026-09-22",
           "price": 21.52
@@ -391,6 +387,10 @@
         {
           "date": "2026-10-20",
           "price": 19
+        },
+        {
+          "date": "2026-10-21",
+          "price": 19
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -404,10 +404,6 @@
       "currentPrice": 93.67,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 95.27
-        },
         {
           "date": "2026-09-22",
           "price": 95.27
@@ -523,6 +519,10 @@
         {
           "date": "2026-10-20",
           "price": 93.67
+        },
+        {
+          "date": "2026-10-21",
+          "price": 93.67
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -533,10 +533,6 @@
       "id": "card_5",
       "history": [
         {
-          "date": "2026-09-21",
-          "price": 2.52
-        },
-        {
           "date": "2026-09-22",
           "price": 2.52
         },
@@ -650,6 +646,10 @@
         },
         {
           "date": "2026-10-20",
+          "price": 2.49
+        },
+        {
+          "date": "2026-10-21",
           "price": 2.49
         }
       ],
@@ -658,16 +658,12 @@
       "priceChange": 0,
       "currentPrice": 2.49,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 389,
+      "sellListings": 388,
       "soldLast24h": 5
     },
     {
       "id": "card_6",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 2.52
-        },
         {
           "date": "2026-09-22",
           "price": 2.52
@@ -782,6 +778,10 @@
         },
         {
           "date": "2026-10-20",
+          "price": 2.49
+        },
+        {
+          "date": "2026-10-21",
           "price": 2.49
         }
       ],
@@ -796,10 +796,6 @@
     {
       "id": "card_7",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 6.97
-        },
         {
           "date": "2026-09-22",
           "price": 6.97
@@ -915,6 +911,10 @@
         {
           "date": "2026-10-20",
           "price": 5.96
+        },
+        {
+          "date": "2026-10-21",
+          "price": 5.96
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
@@ -928,10 +928,6 @@
     {
       "id": "card_8",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 90
-        },
         {
           "date": "2026-09-22",
           "price": 90
@@ -1047,6 +1043,10 @@
         {
           "date": "2026-10-20",
           "price": 99.99
+        },
+        {
+          "date": "2026-10-21",
+          "price": 99.99
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -1060,10 +1060,6 @@
     {
       "id": "card_9",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 2.56
-        },
         {
           "date": "2026-09-22",
           "price": 2.56
@@ -1179,6 +1175,10 @@
         {
           "date": "2026-10-20",
           "price": 2.49
+        },
+        {
+          "date": "2026-10-21",
+          "price": 2.49
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
@@ -1192,10 +1192,6 @@
     {
       "id": "card_10",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 62.99
-        },
         {
           "date": "2026-09-22",
           "price": 62.99
@@ -1311,6 +1307,10 @@
         {
           "date": "2026-10-20",
           "price": 61.68
+        },
+        {
+          "date": "2026-10-21",
+          "price": 61.68
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
@@ -1324,10 +1324,6 @@
     {
       "id": "card_11",
       "history": [
-        {
-          "date": "2026-09-21",
-          "price": 312.82
-        },
         {
           "date": "2026-09-22",
           "price": 312.82
@@ -1442,6 +1438,10 @@
         },
         {
           "date": "2026-10-20",
+          "price": 301.78
+        },
+        {
+          "date": "2026-10-21",
           "price": 301.78
         }
       ],
