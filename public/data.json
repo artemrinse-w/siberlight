@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-25T22:01:43.433Z",
+  "lastUpdated": "2026-10-26T00:06:19.976Z",
   "cards": [
     {
       "id": "card_1",
@@ -8,10 +8,6 @@
       "currentPrice": 2.43,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 2.52
-        },
         {
           "date": "2026-09-27",
           "price": 2.52
@@ -127,10 +123,14 @@
         {
           "date": "2026-10-25",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-26",
+          "price": 2.43
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "soldLast24h": 1,
+      "soldLast24h": 0,
       "sellListings": 115
     },
     {
@@ -140,10 +140,6 @@
       "currentPrice": 2.43,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 2.52
-        },
         {
           "date": "2026-09-27",
           "price": 2.52
@@ -259,6 +255,10 @@
         {
           "date": "2026-10-25",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-26",
+          "price": 2.43
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -272,10 +272,6 @@
       "currentPrice": 19.98,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 21.53
-        },
         {
           "date": "2026-09-27",
           "price": 21.31
@@ -391,6 +387,10 @@
         {
           "date": "2026-10-25",
           "price": 19.98
+        },
+        {
+          "date": "2026-10-26",
+          "price": 19.98
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -404,10 +404,6 @@
       "currentPrice": 89.64,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 96.17
-        },
         {
           "date": "2026-09-27",
           "price": 96.17
@@ -523,6 +519,10 @@
         {
           "date": "2026-10-25",
           "price": 89.64
+        },
+        {
+          "date": "2026-10-26",
+          "price": 89.64
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -532,10 +532,6 @@
     {
       "id": "card_5",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 2.52
-        },
         {
           "date": "2026-09-27",
           "price": 2.52
@@ -650,6 +646,10 @@
         },
         {
           "date": "2026-10-25",
+          "price": 2.43
+        },
+        {
+          "date": "2026-10-26",
           "price": 2.43
         }
       ],
@@ -665,10 +665,6 @@
       "id": "card_6",
       "history": [
         {
-          "date": "2026-09-26",
-          "price": 2.52
-        },
-        {
           "date": "2026-09-27",
           "price": 2.52
         },
@@ -783,6 +779,10 @@
         {
           "date": "2026-10-25",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-26",
+          "price": 2.43
         }
       ],
       "name": "SabeRLighT- (Glitter) 2023",
@@ -796,10 +796,6 @@
     {
       "id": "card_7",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 6.94
-        },
         {
           "date": "2026-09-27",
           "price": 6.74
@@ -915,23 +911,23 @@
         {
           "date": "2026-10-25",
           "price": 6.13
+        },
+        {
+          "date": "2026-10-26",
+          "price": 6.32
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
-      "priceChange": 0,
-      "currentPrice": 6.13,
+      "priceChange": 0.19,
+      "currentPrice": 6.32,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 24,
-      "soldLast24h": 0
+      "sellListings": 23,
+      "soldLast24h": 1
     },
     {
       "id": "card_8",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 90
-        },
         {
           "date": "2026-09-27",
           "price": 90
@@ -1047,6 +1043,10 @@
         {
           "date": "2026-10-25",
           "price": 100
+        },
+        {
+          "date": "2026-10-26",
+          "price": 100
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -1060,10 +1060,6 @@
     {
       "id": "card_9",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 2.54
-        },
         {
           "date": "2026-09-27",
           "price": 2.54
@@ -1179,6 +1175,10 @@
         {
           "date": "2026-10-25",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-26",
+          "price": 2.43
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
@@ -1192,10 +1192,6 @@
     {
       "id": "card_10",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 62.99
-        },
         {
           "date": "2026-09-27",
           "price": 62.99
@@ -1311,6 +1307,10 @@
         {
           "date": "2026-10-25",
           "price": 59.91
+        },
+        {
+          "date": "2026-10-26",
+          "price": 59.91
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
@@ -1324,10 +1324,6 @@
     {
       "id": "card_11",
       "history": [
-        {
-          "date": "2026-09-26",
-          "price": 314.09
-        },
         {
           "date": "2026-09-27",
           "price": 314.09
@@ -1442,6 +1438,10 @@
         },
         {
           "date": "2026-10-25",
+          "price": 291.34
+        },
+        {
+          "date": "2026-10-26",
           "price": 291.34
         }
       ],
