@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-30T23:46:26.087Z",
+  "lastUpdated": "2026-10-31T02:46:11.458Z",
   "cards": [
     {
       "id": "card_1",
@@ -8,10 +8,6 @@
       "currentPrice": 2.43,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 2.52
-        },
         {
           "date": "2026-10-02",
           "price": 2.52
@@ -127,11 +123,15 @@
         {
           "date": "2026-10-30",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-31",
+          "price": 2.43
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "soldLast24h": 0,
-      "sellListings": 123
+      "sellListings": 124
     },
     {
       "id": "card_2",
@@ -140,10 +140,6 @@
       "currentPrice": 2.43,
       "priceChange": 0,
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 2.52
-        },
         {
           "date": "2026-10-02",
           "price": 2.52
@@ -259,10 +255,14 @@
         {
           "date": "2026-10-30",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-31",
+          "price": 2.43
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 38,
+      "sellListings": 39,
       "soldLast24h": 0
     },
     {
@@ -270,12 +270,8 @@
       "name": "SabeRLighT- (Holo) 2022",
       "market_hash_name": "Holo SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 19.8,
-      "priceChange": 0.01,
+      "priceChange": 0,
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 21.13
-        },
         {
           "date": "2026-10-02",
           "price": 21.13
@@ -391,6 +387,10 @@
         {
           "date": "2026-10-30",
           "price": 19.8
+        },
+        {
+          "date": "2026-10-31",
+          "price": 19.8
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
@@ -402,12 +402,8 @@
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 89.75,
-      "priceChange": -0.13,
+      "priceChange": 0,
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 94.83
-        },
         {
           "date": "2026-10-02",
           "price": 95.12
@@ -523,19 +519,19 @@
         {
           "date": "2026-10-30",
           "price": 89.75
+        },
+        {
+          "date": "2026-10-31",
+          "price": 89.75
         }
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
-      "sellListings": 4,
+      "sellListings": 5,
       "soldLast24h": 0
     },
     {
       "id": "card_5",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 2.52
-        },
         {
           "date": "2026-10-02",
           "price": 2.52
@@ -650,6 +646,10 @@
         },
         {
           "date": "2026-10-30",
+          "price": 2.43
+        },
+        {
+          "date": "2026-10-31",
           "price": 2.43
         }
       ],
@@ -665,10 +665,6 @@
       "id": "card_6",
       "history": [
         {
-          "date": "2026-10-01",
-          "price": 2.52
-        },
-        {
           "date": "2026-10-02",
           "price": 2.52
         },
@@ -783,6 +779,10 @@
         {
           "date": "2026-10-30",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-31",
+          "price": 2.43
         }
       ],
       "name": "SabeRLighT- (Glitter) 2023",
@@ -796,10 +796,6 @@
     {
       "id": "card_7",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 6.7
-        },
         {
           "date": "2026-10-02",
           "price": 6.7
@@ -915,11 +911,15 @@
         {
           "date": "2026-10-30",
           "price": 6.23
+        },
+        {
+          "date": "2026-10-31",
+          "price": 6.23
         }
       ],
       "name": "SabeRLighT- (Holo) 2023",
       "market_hash_name": "Holo SaberLight Player Sticker - TI 2023",
-      "priceChange": -0.02,
+      "priceChange": 0,
       "currentPrice": 6.23,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
       "sellListings": 29,
@@ -928,10 +928,6 @@
     {
       "id": "card_8",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 90
-        },
         {
           "date": "2026-10-02",
           "price": 90
@@ -1047,6 +1043,10 @@
         {
           "date": "2026-10-30",
           "price": 100
+        },
+        {
+          "date": "2026-10-31",
+          "price": 100
         }
       ],
       "name": "SabeRLighT- (Gold) 2023",
@@ -1054,16 +1054,12 @@
       "priceChange": 0,
       "currentPrice": 100,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 3,
+      "sellListings": 4,
       "soldLast24h": 0
     },
     {
       "id": "card_9",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 2.52
-        },
         {
           "date": "2026-10-02",
           "price": 2.52
@@ -1179,6 +1175,10 @@
         {
           "date": "2026-10-30",
           "price": 2.43
+        },
+        {
+          "date": "2026-10-31",
+          "price": 2.43
         }
       ],
       "name": "SabeRLighT- (Normal) 2025",
@@ -1192,10 +1192,6 @@
     {
       "id": "card_10",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 62.99
-        },
         {
           "date": "2026-10-02",
           "price": 62.51
@@ -1311,11 +1307,15 @@
         {
           "date": "2026-10-30",
           "price": 59.72
+        },
+        {
+          "date": "2026-10-31",
+          "price": 59.72
         }
       ],
       "name": "SabeRLighT- (Holo) 2025",
       "market_hash_name": "Holo Saberlight Player Sticker - TI 2025",
-      "priceChange": -0.24,
+      "priceChange": 0,
       "currentPrice": 59.72,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
       "sellListings": 5,
@@ -1324,10 +1324,6 @@
     {
       "id": "card_11",
       "history": [
-        {
-          "date": "2026-10-01",
-          "price": 305.11
-        },
         {
           "date": "2026-10-02",
           "price": 304.89
@@ -1443,13 +1439,17 @@
         {
           "date": "2026-10-30",
           "price": 299.75
+        },
+        {
+          "date": "2026-10-31",
+          "price": 299.75
         }
       ],
       "name": "SabeRLighT- (Gold) 2025",
       "market_hash_name": "Gold Saberlight Player Sticker - TI 2025",
       "sellListings": 1,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpdW7-lXmWBjjjdmxr3QJvqD2PvIjI_XAW2PHlrd3s-cxH3nixk8itWyEm96vdyiWbVApCMdwE-QJsRW5lcqnab1KtUMlxw",
-      "priceChange": -0.59,
+      "priceChange": 0,
       "currentPrice": 299.75,
       "soldLast24h": 0
     }
