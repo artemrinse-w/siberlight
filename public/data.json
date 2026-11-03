@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-03T15:58:52.493Z",
+  "lastUpdated": "2026-11-03T21:35:59.100Z",
   "cards": [
     {
       "id": "card_1",
@@ -395,14 +395,14 @@
       ],
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKosjk5lj-RA_i0ceyq3AKvar4PuppdKjGCzXDw7p1sbZtHX7jl0p_5G3Snt36dy6eOFchWZomTOQPshS7jJS5YGR4HVcQ",
       "sellListings": 25,
-      "soldLast24h": 1
+      "soldLast24h": 0
     },
     {
       "id": "card_4",
       "name": "SabeRLighT- (Gold) 2022",
       "market_hash_name": "Gold SabeRLighT- Player Sticker - TI 2022",
       "currentPrice": 91.09,
-      "priceChange": 1.54,
+      "priceChange": 0,
       "history": [
         {
           "date": "2026-10-05",
@@ -790,7 +790,7 @@
       "priceChange": 0,
       "currentPrice": 2.43,
       "icon_url": "i0CoZ81Ui0m-9KwlBY1L_18myuGuq1wfhWSaZgMttydbPaERSR0WqmuqKgQfUYS42ES-RPPa14WyMHqE6lhKpde7-lXmWBjjjdmxr3QJvqD2PvIjIaHLCmGVkuwl4eQ-GC21kU51sjuBzdysc3LBalIoW5AkF7YCsBjrkMqnab2TK-HAgQ",
-      "sellListings": 50,
+      "sellListings": 51,
       "soldLast24h": 0
     },
     {
